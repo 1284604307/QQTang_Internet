@@ -1,0 +1,26 @@
+package com.ming.MVC.model.Prop;
+
+import com.ming.MVC.model.Item;
+import com.ming.MVC.model.base.Point;
+import com.ming.MVC.model.base.Position;
+
+public abstract class Prop extends Item {
+
+    public Prop(){}
+
+    public Prop(Point point){
+
+        super(point);
+        this.point = point;
+        this.setPosition(new Position(point.x*40,point.y*40));
+    }
+
+
+    @Deprecated
+    public Prop(int px,int py){
+        super(px,py);
+        this.setPosition(new Position(point.x*40,point.y*40));
+    }
+
+
+}

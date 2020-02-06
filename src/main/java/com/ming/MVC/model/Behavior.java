@@ -1,0 +1,19 @@
+package com.ming.MVC.model;
+
+public enum Behavior {
+    KEY_PRESSED,
+    KEY_RELEASED,
+    ATTACK,
+    SYN_PLAYER,
+    ADD_BUBBLE,
+    REMOVE_BUBBLE,
+    UPDATE_BUBBLE,
+    ADD_ITEM,
+    REMOVE_ITEM,
+    UPDATE_ITEM,
+    ADD_EXPLODING,
+    REMOVE_EXPLODING,
+    UPDATE_EXPLODING,
+    UPDATE_ALL;
+
+}
