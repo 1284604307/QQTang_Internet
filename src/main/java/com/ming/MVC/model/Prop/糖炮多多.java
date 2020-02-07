@@ -19,10 +19,6 @@ public class 糖炮多多 extends Prop {
     public 糖炮多多(Point point){
         super(point);
     }
-    @Override
-    public void draw(GraphicsContext g) {
-        g.drawImage(ImageUrl.道具1,position.x+5,position.y+2,40,40);
-    }
 
     @Override
     public void update() {

@@ -33,8 +33,8 @@ public class ServerHelper {
                 ));
             }catch (NullPointerException ignored){
 
-            } catch (Exception ignored) {
-                System.out.println("---------------发信异常-----------------");
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
     }

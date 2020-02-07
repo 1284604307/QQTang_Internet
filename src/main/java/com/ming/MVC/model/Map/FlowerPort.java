@@ -7,9 +7,11 @@ import com.ming.MVC.model.Item;
 import com.ming.MVC.model.base.Point;
 import com.ming.MVC.model.baseInterface.BlockBox;
 
-public class FlowerPort extends Item  implements BlockBox {
+public class FlowerPort extends IronWall  implements BlockBox {
     {
         super.unitType = UnitType.FLOWER_PORT;
+        super.transX = -4;
+        super.transY = -18;
     }
 
     public FlowerPort(Point point){
@@ -21,15 +23,8 @@ public class FlowerPort extends Item  implements BlockBox {
         super(px,py);
     }
 
-
-    @Override
-    public void draw(GraphicsContext g) {
-        g.drawImage(ImageUrl.maps.get(this.unitType),this.point.x * 40-4,this.point.y * 40-18);
-    }
-
     @Override
     public void update() {
 
     }
-
 }

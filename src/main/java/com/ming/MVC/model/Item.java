@@ -21,10 +21,17 @@ public abstract class Item {
     protected boolean recycled = false;
     protected UnitType unitType = UnitType.NULL;
     // 地图数组上的点坐标
-    protected Point point;
+    public Point point;
     // 真实坐标
     public Position position;
 
+    public boolean isDead() {
+        return dead;
+    }
+
+    public boolean isRecycled() {
+        return recycled;
+    }
 
     public Item(){
 

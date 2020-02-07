@@ -13,7 +13,7 @@ import static com.ming.MVC.model.data.BaseData.*;
 public class Exploding extends Item {
 
     private int deadTimer = 0;
-    private byte dir = CENTER;
+    public byte dir = CENTER;
     {
         this.unitType = UnitType.EXPLODING;
     }

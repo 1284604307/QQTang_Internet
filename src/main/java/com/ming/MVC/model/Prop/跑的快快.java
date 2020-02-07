@@ -16,11 +16,6 @@ public class 跑的快快 extends Prop {
     }
 
     @Override
-    public void draw(GraphicsContext g) {
-        g.drawImage(ImageUrl.道具2,position.x+5,position.y+2,40,40);
-    }
-
-    @Override
     public void update() {
 
     }

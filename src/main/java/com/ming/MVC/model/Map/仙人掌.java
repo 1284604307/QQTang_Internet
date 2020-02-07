@@ -7,10 +7,12 @@ import com.ming.MVC.model.Item;
 import com.ming.MVC.model.base.Point;
 import com.ming.MVC.model.baseInterface.BlockBox;
 
-public class 仙人掌 extends Item  implements BlockBox {
+public class 仙人掌 extends IronWall  implements BlockBox {
 
     {
         super.unitType = UnitType.CACTUS;
+        super.transX = -2;
+        super.transY = -9;
     }
 
     public 仙人掌(Point point){
@@ -20,11 +22,6 @@ public class 仙人掌 extends Item  implements BlockBox {
     @Deprecated
     public 仙人掌(int px,int py){
         super(px,py);
-    }
-
-    @Override
-    public void draw(GraphicsContext g) {
-        g.drawImage(ImageUrl.maps.get(this.unitType),this.point.x * 40-2,this.point.y * 40-9);
     }
 
     @Override

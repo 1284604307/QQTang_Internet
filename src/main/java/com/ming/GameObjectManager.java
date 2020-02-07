@@ -65,7 +65,7 @@ public class GameObjectManager {
         }
 //        items[row][col] = node;
         itemsArr[row][col].add(node);
-//        System.out.println("成功加入一个节点,加在了 "+row+" "+col + " "+node);
+        System.out.println("成功加入一个节点 "+node);
     }
 
     public void deleteNode(Item node){

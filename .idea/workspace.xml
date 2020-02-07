@@ -1,0 +1,1471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ming/GameObjectManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ming/GameObjectManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ming/MVC/controller/ServerHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ming/MVC/controller/ServerHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Bubble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Bubble.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Exploding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Exploding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/ImageUrl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/ImageUrl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Map/FlowerPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Map/FlowerPort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Map/IronWall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Map/IronWall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Map/RedWall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Map/RedWall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Map/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Map/Wall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Map/仙人掌.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Map/仙人掌.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Prop/Prop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Prop/Prop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Prop/威力嘎嘎.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Prop/威力嘎嘎.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Prop/糖炮多多.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Prop/糖炮多多.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Prop/跑的快快.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Prop/跑的快快.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/UnitType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/UnitType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/TcpClientVerticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/TcpClientVerticle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/TcpServerVerticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/TcpServerVerticle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ming/GameObjectManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ming/GameObjectManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ming/MVC/model/Bubble.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ming/MVC/model/Bubble.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ming/MVC/model/Exploding.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ming/MVC/model/Exploding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ming/MVC/model/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ming/MVC/model/Item.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ming/MVC/model/Map/FlowerPort.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ming/MVC/model/Map/FlowerPort.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ming/MVC/model/Map/IronWall.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ming/MVC/model/Map/IronWall.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ming/MVC/model/Map/RedWall.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ming/MVC/model/Map/RedWall.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ming/MVC/model/Map/Wall.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ming/MVC/model/Map/Wall.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ming/MVC/model/Map/仙人掌.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ming/MVC/model/Map/仙人掌.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ming/MVC/model/UnitType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ming/MVC/model/UnitType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/TcpClientVerticle$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/TcpClientVerticle$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/TcpClientVerticle$MainUpdate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/TcpClientVerticle$MainUpdate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/TcpClientVerticle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/TcpClientVerticle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/TcpServerVerticle$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/TcpServerVerticle$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/TcpServerVerticle$MainUpdateFixed.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/TcpServerVerticle$MainUpdateFixed.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/TcpServerVerticle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/TcpServerVerticle.class" afterDir="false" />
+    </list>
+    <ignored path="JavaFxApplication.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DebuggerManager">
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <ui_properties converted="true" />
+    <breakpoint_rules converted="true" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="DockManager">
+    <window id="3">
+      <content type="file-editors">
+        <state>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/TransUnit.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="352">
+                    <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/main/java/test/TcpServerVerticle.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="59">
+                    <caret line="210" lean-forward="true" selection-start-line="210" selection-end-line="210" />
+                    <folding>
+                      <element signature="imports" expanded="true" />
+                      <element signature="method#openExplore#0;class#TcpServerVerticle#0" />
+                      <element signature="method#justJudge#0;class#TcpServerVerticle#0" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="JavaFxApplication" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/test/TcpClientVerticle.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="101" selection-start-line="101" selection-end-line="101" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/controller/ServerHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="241">
+              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Prop/威力嘎嘎.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#389#390#0" expanded="true" />
+                <element signature="e#477#478#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Prop/跑的快快.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Prop/Prop.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+              <folding>
+                <element signature="e#636#637#0" expanded="true" />
+                <element signature="e#724#725#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/ImageUrl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1540">
+              <caret line="72" column="37" selection-start-line="72" selection-start-column="37" selection-end-line="72" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/LocalGameObjectManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Map/Wall.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="37" column="15" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="15" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Map/RedWall.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="616">
+              <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+              <folding>
+                <element signature="e#739#740#0" expanded="true" />
+                <element signature="e#769#770#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/UnitType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>LEFTY</find>
+      <find>CENTER</find>
+      <find>justJudge</find>
+      <find>Gson</find>
+      <find>ANIMAT</find>
+      <find>open</find>
+      <find>openExplore</find>
+      <find>心跳回应超时</find>
+      <find>服务器解包</find>
+      <find>BUBBLE</find>
+      <find>REMOVE</find>
+      <find>REMOVE_B</find>
+      <find>OPE</find>
+      <find>SENDALL</find>
+      <find>EX</find>
+      <find>explodings</find>
+      <find>GAMEOBJE</find>
+      <find>UPDATE</find>
+      <find>updateitem</find>
+      <find>unity</find>
+      <find>OPEN</find>
+      <find>dead</find>
+      <find>RECYC</find>
+      <find>RECYCLED</find>
+      <find>SYN</find>
+      <find>PLAYER</find>
+      <find>PLAY</find>
+      <find>SYN_PLAYER</find>
+      <find>players</find>
+      <find>player</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>file:src/main/resources</replace>
+    </replaceStrings>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/com/ming/MVC/model/Item.java" />
+        <option value="$PROJECT_DIR$/src/com/ming/MVC/model/Map/Wall.java" />
+        <option value="$PROJECT_DIR$/src/com/ming/MVC/model/Prop/糖炮多多.java" />
+        <option value="$PROJECT_DIR$/src/com/ming/MVC/model/Prop/TransProp/KngintProp.java" />
+        <option value="$PROJECT_DIR$/src/com/ming/MVC/model/Player.java" />
+        <option value="$PROJECT_DIR$/src/com/ming/MVC/model/Bubble.java" />
+        <option value="$PROJECT_DIR$/src/com/ming/MVC/model/Map/FlowerPort.java" />
+        <option value="$PROJECT_DIR$/src/com/ming/MVC/model/Map/IronWall.java" />
+        <option value="$PROJECT_DIR$/src/com/ming/MVC/model/Map/RedWall.java" />
+        <option value="$PROJECT_DIR$/src/com/ming/MVC/model/Map/仙人掌.java" />
+        <option value="$PROJECT_DIR$/src/test/java/serverTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/test/java/serverTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Prop/TransProp/ReflexiveMonsterProp.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/ming/Player.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/ming/clientTest.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/log4j.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Command.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/ming/TcpServerVerticle.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/ming/DoMessage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/ming/TcpClientVerticle.java" />
+        <option value="$PROJECT_DIR$/src/main/java/test/MsgUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ming/MusicManager.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/ming/serverTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Player.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/ming/MsgUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ming/LocalGameApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ming/NetServer/Server.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ming/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Behavior.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Bubble.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Item.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ming/GameObjectManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Exploding.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Map/FlowerPort.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Map/仙人掌.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/TransUnit.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Map/IronWall.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Map/Wall.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Map/RedWall.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/ImageUrl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/UnitType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Prop/威力嘎嘎.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Prop/Prop.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Prop/糖炮多多.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Prop/跑的快快.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ming/LocalGameObjectManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/test/TcpServerVerticle.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ming/MVC/controller/ServerHelper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/test/TcpClientVerticle.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-37" />
+    <option name="y" value="47" />
+    <option name="width" value="1549" />
+    <option name="height" value="949" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="QQTang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QQTang" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QQTang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QQTang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QQTang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QQTang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QQTang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QQTang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QQTang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QQTang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ming" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QQTang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QQTang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ming" type="462c0819:PsiDirectoryNode" />
+              <item name="MVC" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QQTang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QQTang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ming" type="462c0819:PsiDirectoryNode" />
+              <item name="MVC" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QQTang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QQTang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ming" type="462c0819:PsiDirectoryNode" />
+              <item name="MVC" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="ServerHelper" type="1a9f42e2:ClassTreeNode" />
+            </path>
+            <path>
+              <item name="QQTang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QQTang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ming" type="462c0819:PsiDirectoryNode" />
+              <item name="MVC" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QQTang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QQTang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ming" type="462c0819:PsiDirectoryNode" />
+              <item name="MVC" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QQTang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QQTang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ming" type="462c0819:PsiDirectoryNode" />
+              <item name="MVC" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="Map" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QQTang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QQTang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ming" type="462c0819:PsiDirectoryNode" />
+              <item name="MVC" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="Prop" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QQTang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QQTang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ming" type="462c0819:PsiDirectoryNode" />
+              <item name="LocalGameObjectManager" type="1a9f42e2:ClassTreeNode" />
+            </path>
+            <path>
+              <item name="QQTang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QQTang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QQTang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QQTang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QQTang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QQTang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="Images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QQTang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QQTang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="Images" type="462c0819:PsiDirectoryNode" />
+              <item name="Bubble" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="OverrideImplement.combined" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/test" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="recentsLimit" value="5" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\工程包\QQTang\src\main\resources" />
+      <recent name="D:\工程包\QQTang\src" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.ming" />
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ming" />
+      <recent name="com.ming.MVC.model.Prop.TransProp" />
+      <recent name="com.ming.MVC.model.Prop" />
+      <recent name="com.ming.MVC.model.Map" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\工程包\QQTang\src\main\java\test" />
+      <recent name="D:\工程包\QQTang\src\main\resources" />
+      <recent name="D:\工程包\QQTang\src\test\java" />
+      <recent name="D:\工程包\QQTang\src\test" />
+      <recent name="D:\工程包\QQTang\src\pojo" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.TcpClientVerticle">
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LocalGameApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ming.LocalGameApplication" />
+      <module name="QQTang" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ming.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.ming.Main" />
+      <module name="QQTang" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ming.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TcpClientVerticle (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.TcpClientVerticle" />
+      <module name="QQTang" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TcpClientVerticle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.TcpClientVerticle" />
+      <module name="QQTang" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TcpServerVerticle (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.TcpServerVerticle" />
+      <module name="QQTang" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TcpServerVerticle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ming.TcpServerVerticle" />
+      <module name="QQTang" />
+      <option name="VM_PARAMETERS" value="-Dlog4j.skipJansi=false" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ming.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TcpServerVerticle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.TcpServerVerticle" />
+      <module name="QQTang" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="serverTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ming.serverTest" />
+      <module name="QQTang" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ming.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.TcpClientVerticle" />
+      <item itemvalue="Application.TcpServerVerticle" />
+      <item itemvalue="Application.TcpServerVerticle (1)" />
+      <item itemvalue="Application.TcpClientVerticle (1)" />
+      <item itemvalue="Application.serverTest" />
+      <item itemvalue="Application.LocalGameApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.TcpClientVerticle" />
+        <item itemvalue="Application.TcpServerVerticle (1)" />
+        <item itemvalue="Application.TcpClientVerticle (1)" />
+        <item itemvalue="Application.LocalGameApplication" />
+        <item itemvalue="Application.serverTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+      <created>1359379246138</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1359379246138</updated>
+      <workItem from="1359379250712" duration="1302000" />
+      <workItem from="1580106545770" duration="493000" />
+      <workItem from="1580380535509" duration="12365000" />
+      <workItem from="1580442931111" duration="6932000" />
+      <workItem from="1580450701812" duration="12485000" />
+      <workItem from="1580473560319" duration="1573000" />
+      <workItem from="1580475402862" duration="2853000" />
+      <workItem from="1580528016095" duration="10266000" />
+      <workItem from="1580538876907" duration="4000" />
+      <workItem from="1580539909697" duration="154000" />
+      <workItem from="1580540173215" duration="6369000" />
+      <workItem from="1580547617124" duration="8365000" />
+      <workItem from="1580607239360" duration="37527000" />
+      <workItem from="1580687303974" duration="23766000" />
+      <workItem from="1580736292530" duration="650000" />
+      <workItem from="1580793113694" duration="26381000" />
+      <workItem from="1580876875311" duration="20967000" />
+      <workItem from="1580917035729" duration="4984000" />
+      <workItem from="1580964704585" duration="37505000" />
+      <workItem from="1581050114344" duration="7077000" />
+      <workItem from="1581063816537" duration="1981000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="223999000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-37" y="47" width="1549" height="949" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.1902505" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Favorites" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="UI Designer" order="6" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.25631315" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.33704117" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32925472" />
+      <window_info anchor="bottom" id="Application Servers" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Problems" order="9" />
+      <window_info anchor="bottom" id="Changes" order="10" />
+      <window_info anchor="bottom" id="Profiler" order="11" />
+      <window_info anchor="bottom" id="Event Log" order="12" weight="0.32925472" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.31565657" />
+      <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="15" />
+      <window_info anchor="bottom" id="Terminal" order="16" weight="0.32925472" />
+      <window_info anchor="bottom" id="Duplicates" order="17" weight="0.32921347" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="JetGradle" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="right" id="Maven" order="7" />
+      <window_info anchor="right" id="Capture Analysis" order="8" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info anchor="right" id="Theme Preview" order="10" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.17006437" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Favorites" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="UI Designer" order="6" />
+      <window_info anchor="bottom" id="Duplicates" order="0" weight="0.32921347" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" />
+      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.26362625" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.33704117" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.32925472" />
+      <window_info anchor="bottom" id="Application Servers" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Problems" order="10" />
+      <window_info anchor="bottom" id="Changes" order="11" />
+      <window_info anchor="bottom" id="Profiler" order="12" />
+      <window_info anchor="bottom" id="Event Log" order="13" weight="0.32925472" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.32017544" />
+      <window_info anchor="bottom" id="Docker" order="15" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="16" />
+      <window_info anchor="bottom" id="Terminal" order="17" weight="0.32925472" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="JetGradle" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="right" id="Maven" order="7" />
+      <window_info anchor="right" id="Capture Analysis" order="8" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info anchor="right" id="Theme Preview" order="10" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/ming/Main.java</url>
+          <line>33</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>behaviors.add(new DoMessage(Behavior.ADD_UNIT,gson.toJson(b)))</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>player.attck()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>canAttack()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>b</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>putBubbles++</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>player</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>!player.canAttack()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>this.images[dir*4]</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>g.drawImage(this.images[dir*4],position.getX(),position.getY());</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Command.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="5" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/ming/DoMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/ming/TcpServerVerticle.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/application/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="262" lean-forward="true" selection-start-line="262" selection-end-line="262" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/ming/TcpClientVerticle.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/test/DoMessage.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-core/3.6.0/vertx-core-3.6.0.jar!/io/vertx/core/streams/impl/InboundBuffer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/jre/lib/rt.jar!/sun/nio/ch/WindowsSelectorImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="446" column="27" selection-start-line="446" selection-start-column="27" selection-end-line="446" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/ming/serverTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/ming/clientTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="42" column="11" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/controller/KeyStack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="836">
+          <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+          <folding>
+            <element signature="e#167#168#0" expanded="true" />
+            <element signature="e#206#207#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/ming/MsgUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+          <folding>
+            <element signature="e#147#148#0" expanded="true" />
+            <element signature="e#192#193#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/canvas/GraphicsContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="2633" column="16" selection-start-line="2633" selection-start-column="16" selection-end-line="2633" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="35" lean-forward="true" selection-start-line="8" selection-start-column="35" selection-end-line="33" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1748">
+          <caret line="388" column="26" selection-start-line="388" selection-start-column="26" selection-end-line="388" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#initProperty#0;class#Player#0" />
+            <element signature="method#updateProperty#0;class#Player#0" />
+            <element signature="method#run#0;class#Player#0" />
+            <element signature="method#judge#0;class#Player#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/animation/AnimationTimer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="47" column="28" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/NetClient/Client.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-core/3.6.0/vertx-core-3.6.0.jar!/io/vertx/core/impl/VertxImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="1028" selection-start-line="1028" selection-end-line="1028" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="460" column="19" selection-start-line="460" selection-start-column="19" selection-end-line="460" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/data/BaseData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/LocalGameApplication.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/NetServer/Server.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="1464" column="15" selection-start-line="1464" selection-start-column="15" selection-end-line="1464" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Enum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="150" column="21" selection-start-line="150" selection-start-column="21" selection-end-line="150" selection-end-column="21" />
+          <folding>
+            <element signature="e#4551#4552#0" expanded="true" />
+            <element signature="e#4590#4591#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar!/com/google/gson/Gson.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="486" column="17" selection-start-line="486" selection-start-column="17" selection-end-line="486" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MusicManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="704">
+          <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-44">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/test/MsgUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MapEditor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="31" column="15" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Bubble.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="35" column="29" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Behavior.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Exploding.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="70" column="13" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#478#479#0" expanded="true" />
+            <element signature="e#523#524#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/GameObjectManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="67" column="38" selection-start-line="67" selection-start-column="38" selection-end-line="67" selection-end-column="38" />
+          <folding>
+            <element signature="e#374#375#0" expanded="true" />
+            <element signature="e#410#411#0" expanded="true" />
+            <element signature="e#349#350#0" expanded="true" />
+            <element signature="e#393#394#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Map/FlowerPort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#492#493#0" expanded="true" />
+            <element signature="e#520#521#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Map/仙人掌.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding>
+            <element signature="e#482#483#0" expanded="true" />
+            <element signature="e#510#511#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Map/IronWall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Prop/糖炮多多.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Prop/威力嘎嘎.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#389#390#0" expanded="true" />
+            <element signature="e#477#478#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Prop/跑的快快.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Prop/Prop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+          <folding>
+            <element signature="e#636#637#0" expanded="true" />
+            <element signature="e#724#725#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/ImageUrl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1540">
+          <caret line="72" column="37" selection-start-line="72" selection-start-column="37" selection-end-line="72" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/LocalGameObjectManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Map/Wall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="37" column="15" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Map/RedWall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+          <folding>
+            <element signature="e#739#740#0" expanded="true" />
+            <element signature="e#769#770#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/UnitType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/TransUnit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/controller/ServerHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/test/TcpServerVerticle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="210" lean-forward="true" selection-start-line="210" selection-end-line="210" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#openExplore#0;class#TcpServerVerticle#0" />
+            <element signature="method#justJudge#0;class#TcpServerVerticle#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/test/TcpClientVerticle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="101" selection-start-line="101" selection-end-line="101" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>QQTang</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

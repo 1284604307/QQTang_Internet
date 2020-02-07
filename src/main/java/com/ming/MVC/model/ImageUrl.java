@@ -56,9 +56,9 @@ public class ImageUrl {
     public final static Image 冰墙 =  new Image("file:src/main/resources\\Images\\Decoration\\冰墙.png");
     public final static Image 桶 =  new Image("file:src/main/resources\\Images\\Decoration\\桶.png");
 
-    public final static Image 道具1 = new Image("file:src/main/resources\\Images\\Goods\\糖包.gif");
-    public final static Image 道具2 = new Image("file:src/main/resources\\Images\\Goods\\飞鞋.gif");
-    public final static Image 道具3 = new Image("file:src/main/resources\\Images\\Goods\\威力.gif");
+    public final static Image 糖炮多多 = new Image("file:src/main/resources\\Images\\Goods\\糖包.gif");
+    public final static Image 跑的快快 = new Image("file:src/main/resources\\Images\\Goods\\飞鞋.gif");
+    public final static Image 威力嘎嘎 = new Image("file:src/main/resources\\Images\\Goods\\威力.gif");
     public final static Image a反身怪 = new Image("file:src/main/resources\\Images\\Goods\\变身道具_反身怪.gif");
     public final static Image a骑士 = new Image("file:src/main/resources\\Images\\Goods\\变身道具_骑士.gif");
     public final static Image a泡泡皇后 = new Image("file:src/main/resources\\Images\\Goods\\变身道具_炮王.gif");
@@ -74,10 +74,11 @@ public class ImageUrl {
         maps.put(UnitType.RED_WALL,RedWall);
         maps.put(UnitType.FLOWER_PORT,花瓶);
         maps.put(UnitType.IRON_WALL,铁块);
-        maps.put(UnitType.糖炮多多,道具1);
-        maps.put(UnitType.跑的快快,道具2);
-        maps.put(UnitType.威力嘎嘎,道具3);
-        maps.put(UnitType.REFLEXIVE_MOSTER_PROP,道具3);
+        maps.put(UnitType.糖炮多多,糖炮多多);
+        maps.put(UnitType.跑的快快,跑的快快);
+        maps.put(UnitType.威力嘎嘎,威力嘎嘎);
+        maps.put(UnitType.REFLEXIVE_MOSTER_PROP,a反身怪);
+        maps.put(UnitType.a泡泡皇后,a泡泡皇后);
         maps.put(UnitType.比,比);
         maps.put(UnitType.桶,桶);
         maps.put(UnitType.武,武);

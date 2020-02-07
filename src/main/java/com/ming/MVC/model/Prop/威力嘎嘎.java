@@ -17,7 +17,7 @@ public class 威力嘎嘎 extends Prop {
 
     @Override
     public void draw(GraphicsContext g) {
-        g.drawImage(ImageUrl.道具3,position.x+5,position.y+2,30,35);
+        g.drawImage(ImageUrl.maps.get(unitType),position.x+5,position.y+2,30,35);
     }
 
     @Override

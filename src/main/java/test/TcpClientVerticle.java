@@ -2,11 +2,13 @@ package test;
 
 import com.google.gson.Gson;
 import com.ming.GameObjectManager;
+import com.ming.LocalGameObjectManager;
 import com.ming.MVC.controller.KeyStack;
 import com.ming.MVC.model.*;
 import com.ming.MVC.model.Map.*;
 import com.ming.MVC.model.Prop.Prop;
 import com.ming.MVC.model.base.Point;
+import com.ming.MVC.model.base.Position;
 import com.ming.MVC.model.playerForms.骑士;
 import com.ming.MusicManager;
 import io.vertx.core.Vertx;
@@ -28,6 +30,7 @@ import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 
@@ -57,10 +60,9 @@ public class TcpClientVerticle extends Application {
 
     KeyStack<KeyCode> keyStack = new KeyStack<>();
 
-
-    public static GameObjectManager gameObjectManager;
+    public static LocalGameObjectManager gameObjectManager;
     private Player player;
-
+    private Player[] players;
 
     public static void main(String[] args) {
         gson = new Gson();
@@ -85,14 +87,29 @@ public class TcpClientVerticle extends Application {
 
             if ("Server".equals(body)) {
                 socketId = socketId1;
+            }else if ("Syn_Players".equals(body)){
+                // todo 画面正式开始
+                players = new Player[Integer.parseInt(socketId1)];
+                // 锁帧线程 和 UI线程 启动
+                new TcpClientVerticle.MainUpdate().start();
+                for (int i = 0; i < players.length; i++) {
+                    players[i] =  new Player(ImageUrl.Monkey);
+                }
             }else {
                 DoMessage doMessage = gson.fromJson(body, DoMessage.class);
 //                System.out.println(doMessage);
-                if (doMessage.behavior==Behavior.SYN_PLAYER)
-                    player.updateProperty(gson.fromJson(doMessage.value,Player.class));
+                if (doMessage.behavior==Behavior.SYN_PLAYER){
+                    Player[] ps = gson.fromJson(doMessage.value, Player[].class);
+                    for (int i = 0; i < ps.length; i++) {
+                        players[i].updateProperty(ps[i]);
+                    }
+
+                }
                 else if (doMessage.behavior == Behavior.UPDATE_ALL){
-                    System.out.println(gson.fromJson(doMessage.value,ArrayList[][].class));
-                    gameObjectManager.updateItems(gson.fromJson(doMessage.value,ArrayList[][].class));
+                    ArrayList<ArrayList<String>> arrayList = gson.fromJson(doMessage.value, ArrayList.class);
+                    gameObjectManager.updateItems(arrayList);
+//                    if (arrayList.size()>0)
+//                        System.out.println(arrayList);
                 }
                 else {
 //                    doMessages.add(doMessage);
@@ -138,19 +155,7 @@ public class TcpClientVerticle extends Application {
         gameCanvas.setLayoutY(translateY);
         g2D = gameCanvas.getGraphicsContext2D();
 
-        gameObjectManager = new GameObjectManager();
-
-
-        gameObjectManager.addNode(new Wall(14,1));
-        gameObjectManager.addNode(new Wall(3,1));
-        gameObjectManager.addNode(new Wall(4,1));
-        gameObjectManager.addNode(new Wall(5,1));
-        gameObjectManager.addNode(new IronWall(4,8));
-        gameObjectManager.addNode(new IronWall(5,3));
-        gameObjectManager.addNode(new RedWall(4,5));
-        gameObjectManager.addNode(new RedWall(3,2));
-        gameObjectManager.addNode(new FlowerPort(6,5));
-        gameObjectManager.addNode(new 仙人掌(6,12));
+        gameObjectManager = new LocalGameObjectManager();
 
 //        //todo 置入主画布
         root.getChildren().add(gameCanvas);
@@ -190,10 +195,6 @@ public class TcpClientVerticle extends Application {
 
         MusicManager.init();
 
-//        // 锁帧线程 和 UI线程 启动
-        new TcpClientVerticle.MainUpdate().start();
-
-        player = new Player(ImageUrl.Monkey);
 
         stage.show();
     }
@@ -208,37 +209,24 @@ public class TcpClientVerticle extends Application {
             //todo 地图
             g2D.drawImage(new Image("file:src/main/resources\\Images\\Map\\标准.jpg"),0,0);
 
-            //ex 更新模型
-            Iterator<DoMessage> iterator = doMessages.iterator();
-            while (iterator.hasNext()){
-                DoMessage doMessage = iterator.next();
-                System.out.println(doMessages.size());
-                System.out.println(doMessage.behavior);
-                switch (doMessage.behavior){
-                    case ADD_BUBBLE:
-                        System.out.println("释放泡泡");
-                        MusicManager.putBubble();
-                        gameObjectManager.addNode(new Bubble().initProperties(gson.fromJson(doMessage.value,Bubble.class)));
-                        break;
-                    case ADD_EXPLODING:
-                        gameObjectManager.addNode(gson.fromJson(doMessage.value,Exploding.class));
-                        break;
-                    case REMOVE_BUBBLE:
-                        System.out.println("删除泡泡");
-                        MusicManager.bubbleBomb();
-                        gameObjectManager.deleteNode(gson.fromJson(doMessage.value,Exploding.class));
-                        break;
-                    case REMOVE_EXPLODING:
-                        gameObjectManager.deleteNode(gson.fromJson(doMessage.value,Exploding.class));
-                        break;
+            player = players[0];
 
-
+            boolean d = true;
+            int s = 0;
+            for (Item item:gameObjectManager.getItems()) {
+                s = item.point.y ;
+                if (d && s >= player.point.y )
+                {
+                    d = false;
+                    player.draw(g2D);
                 }
-
-                iterator.remove();
+                item.draw(g2D);
+            }
+            if (d){
+                player.draw(g2D);
             }
 
-            drawItemsByItemsArr();
+//            drawItemsByItemsArr();
 
             try {
                 Thread.sleep(16);
@@ -250,28 +238,28 @@ public class TcpClientVerticle extends Application {
     }
 
 
-    private void drawItemsByItemsArr(){
-
-        ArrayList<Item>[][] items = gameObjectManager.getItemsArr();
-
-        for (int i =0;i<items.length;i++) {
-            ArrayList<Item>[] itemArr = items[i];
-            for (ArrayList<Item> itemsArr : itemArr) {
-                if (itemsArr == null) continue;
-                for (Item item : itemsArr) {
-                    if (item.getUnitType() == UnitType.NULL) continue;
-                    item.draw(g2D);
-                }
-            }
-            // ex 在第人物所在行渲染角色
-            if (player.getPoint().y == i ) {
-                player = player.trans();
-                player.draw(g2D);
-            }
-        }
-
-
-    }
+//    private void drawItemsByItemsArr(){
+//
+//        ArrayList<Item>[][] items = gameObjectManager.getItemsArr();
+//
+//        for (int i =0;i<items.length;i++) {
+//            ArrayList<Item>[] itemArr = items[i];
+//            for (ArrayList<Item> itemsArr : itemArr) {
+//                if (itemsArr == null) continue;
+//                for (Item item : itemsArr) {
+//                    if (item.getUnitType() == UnitType.NULL) continue;
+//                    item.draw(g2D);
+//                }
+//            }
+//            // ex 在第人物所在行渲染角色
+//            if (player.getPoint().y == i ) {
+//                player = player.trans();
+//                player.draw(g2D);
+//            }
+//        }
+//
+//
+//    }
 
 
 

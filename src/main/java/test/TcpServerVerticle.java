@@ -23,6 +23,7 @@ import javafx.scene.input.KeyCode;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
+import java.lang.reflect.Array;
 import java.net.Socket;
 import java.util.*;
 
@@ -46,7 +47,8 @@ public class TcpServerVerticle extends AbstractVerticle {
 
     //TODO 游戏对象
     private static GameObjectManager gameObjectManager;
-    private Player player;
+
+    private Player[] players;
 
     private Queue<DoMessage> behaviors = new LinkedList<>();
     private KeyStack<KeyCode> keyStack = new KeyStack<>();
@@ -58,50 +60,98 @@ public class TcpServerVerticle extends AbstractVerticle {
         @Override
         public void run() {
 
-//            gameObjectManager.addNode(new Wall(14,1));
-//            gameObjectManager.addNode(new Wall(3,1));
-//            gameObjectManager.addNode(new Wall(4,1));
-//            gameObjectManager.addNode(new Wall(5,1));
-//            gameObjectManager.addNode(new IronWall(4,8));
-//            gameObjectManager.addNode(new IronWall(5,3));
-//            gameObjectManager.addNode(new RedWall(4,5));
-//            gameObjectManager.addNode(new RedWall(3,2));
-//            gameObjectManager.addNode(new FlowerPort(6,5));
-//            gameObjectManager.addNode(new 仙人掌(6,12));
+            gameObjectManager.addNode(new Wall(14,1));
+            gameObjectManager.addNode(new Wall(3,1));
+            gameObjectManager.addNode(new Wall(4,1));
+            gameObjectManager.addNode(new Wall(5,1));
+            gameObjectManager.addNode(new IronWall(4,8));
+            gameObjectManager.addNode(new IronWall(5,3));
+            gameObjectManager.addNode(new RedWall(4,5));
+            gameObjectManager.addNode(new RedWall(3,2));
+            gameObjectManager.addNode(new FlowerPort(6,5));
+            gameObjectManager.addNode(new 仙人掌(6,12));
+
+//            players = new Player[2];
+//            for (Player curPlayer:players) {
+//                curPlayer = new Player();
+//            }
+//            player = players[1];
+
 
             while (true){
                 ArrayList<Item>[][] items = gameObjectManager.getItemsArr();
 
 
-                //todo 方向更新
-                if (!keyStack.isEmpty()) {
-                    player.run(keyStack.peek());
+                for (int i = 0; i < players.length; i++) {
+                    Player player = players[i];
+
+                    //todo 方向更新
+                    if (!keyStack.isEmpty()) {
+                        player.run(keyStack.peek());
+                    }
+                    else player.run(KeyCode.STOP);
+                    // 遵循规则: 下 上 左 右
+                    //noinspection unchecked
+                    player.canRun(
+                            player.getPoint().y<12?items[player.getPoint().y+1][player.getPoint().x]:null,
+                            player.getPoint().y>0?items[player.getPoint().y-1][player.getPoint().x]:null,
+                            player.getPoint().x>0?items[player.getPoint().y][player.getPoint().x-1]:null,
+                            player.getPoint().x<14?items[player.getPoint().y][player.getPoint().x+1]:null,
+                            items[player.getPoint().y][player.getPoint().x]);
+
+                    player.update();
                 }
-                else player.run(KeyCode.STOP);
-
-                // 遵循规则: 下 上 左 右
-                //noinspection unchecked
-                player.canRun(
-                        player.getPoint().y<12?items[player.getPoint().y+1][player.getPoint().x]:null,
-                        player.getPoint().y>0?items[player.getPoint().y-1][player.getPoint().x]:null,
-                        player.getPoint().x>0?items[player.getPoint().y][player.getPoint().x-1]:null,
-                        player.getPoint().x<14?items[player.getPoint().y][player.getPoint().x+1]:null,
-                        items[player.getPoint().y][player.getPoint().x]);
-
-                player.update();
 
                 clearBehaviors(gameObjectManager.getItemsArr());
 
+                // todo 发送全地图
+                ArrayList<ArrayList<String>> itemList = new ArrayList<>();
+                for (ArrayList<Item>[] itemArrs:items) {
+                    for (ArrayList<Item> itemArr: itemArrs) {
+                        if (itemArr == null) continue;
+                        for (Item item :itemArr) {
+                            ArrayList<String> list = new ArrayList<>();
+                            list.add(item.getUnitType().toString());
+                            list.add(String.valueOf(item.position.x));
+                            list.add(String.valueOf(item.position.y));
+                            list.add(String.valueOf(item.getPoint().x));
+                            list.add(String.valueOf( item.getPoint().y));
+                            list.add(String.valueOf( item.isDead()));
+                            list.add(String.valueOf(item.isRecycled()));
+                            switch (item.getUnitType()){
+                                case EXPLODING:
+                                    list.add(String.valueOf(((Exploding)item).dir));
+                                    itemList.add(list);
+                                    break;
+                                case BUBBLE:
+                                    list.add(String.valueOf(((Bubble) item ).getPower()));
+                                    list.add(String.valueOf(((Bubble) item ).getPlayerId()));
+                                    itemList.add(list);
+                                    break;
+                            }
+                            if (item instanceof Wall){
+//                                WALL: 桶: 武: 水2: RED_WALL: FLOWER_PORT: 仙人掌: IRON_WALL:
+                                list.add(String.valueOf(((Wall) item ).transX));
+                                list.add(String.valueOf(((Wall) item ).transY));
+                                itemList.add(list);
+                            }
+                        }
+                    }
+                }
+                serverHelper.sendAll(new DoMessage(UPDATE_ALL,gson.toJson(itemList)));
 
+                try {
+                    Thread.sleep(1000/60);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
 
         }
     }
 
-
     private ArrayList<Bubble> exBubbles = new ArrayList<>();
     private ArrayList<Exploding> exBubbleExplodings = new ArrayList<>();
-
 
     private void clearBehaviors(ArrayList<Item>[][] items) {
 
@@ -115,18 +165,17 @@ public class TcpServerVerticle extends AbstractVerticle {
                     Item item = it.next();
                     if (item.getUnitType() == UnitType.NULL) continue;
                     item.update();
-                    // 移除
                     if (item.recycled()){
-                        // todo 发送删除节点命令
                         if (item.getUnitType() == UnitType.BUBBLE) {
-                            player.releaseBubble();
+                            players[((Bubble) item).playerId].releaseBubble();
                             exBubbles.add((Bubble) item);
                         }else if (item.getUnitType() == UnitType.EXPLODING)
                         {
                             exBubbleExplodings.add((Exploding) item);
 //                            serverHelper.sendAll(new DoMessage(REMOVE_EXPLODING,gson.toJson(item)));
-                        }else
+                        }else {
                             it.remove();
+                        }
                     }
                 }
             }
@@ -155,19 +204,17 @@ public class TcpServerVerticle extends AbstractVerticle {
             it2.remove();
         }
 
-        serverHelper.sendAll(new DoMessage(UPDATE_ITEM,gson.toJson(gameObjectManager.getItemsArr())));
-
-
+//        serverHelper.sendAll(new DoMessage(UPDATE_ITEM,gson.toJson(gameObjectManager.getItemsArr())));
 
         // todo 清理本帧行为
 //        behaviors.clear();
 
-        try {
-//                    Thread.sleep(0x0f);
-            Thread.sleep(16);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        try {
+////                    Thread.sleep(0x0f);
+//            Thread.sleep(16);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
 
     private void openExplore(Bubble item) {
@@ -217,7 +264,6 @@ public class TcpServerVerticle extends AbstractVerticle {
         }
     }
 
-
     /**
      * 判断当前延伸方向是否有节点，节点类型及其触发手段
      * @param items
@@ -239,22 +285,20 @@ public class TcpServerVerticle extends AbstractVerticle {
                     case BUBBLE:
                         ((Bubble)item).dead();
                         return false;
-                    case RED_WALL:
-                    case WALL:
-                        //todo  可炸毁墙的炸毁方法
-                        Item dead = item.dead();
-                        serverHelper.sendAll(new DoMessage(UPDATE_ITEM,gson.toJson(item)));
-                        if (dead instanceof Prop) {
-                            gameObjectManager.addNode(dead);
-                            serverHelper.sendAll(new DoMessage(ADD_ITEM,gson.toJson(dead)));
-                        }
-                        return false;
-                    case IRON_WALL:
-                    case FLOWER_PORT:
-                    case CACTUS:
-                        return false;
+                    case EXPLODING:
+                        return true;
                 }
-                if (item instanceof Prop)
+                if (item instanceof Wall) {
+                    //todo  可炸毁墙的炸毁方法
+                    Item dead = item.dead();
+//                        serverHelper.sendAll(new DoMessage(UPDATE_ITEM,gson.toJson(item)));
+                    if (dead instanceof Prop) {
+                        gameObjectManager.addNode(dead);
+//                            serverHelper.sendAll(new DoMessage(ADD_ITEM,gson.toJson(dead)));
+                    }
+                    return false;
+                }
+                else if (item instanceof Prop)
                     item.recycle();
             }
 
@@ -264,11 +308,13 @@ public class TcpServerVerticle extends AbstractVerticle {
         return true;
     }
 
-
-
     private void initGameObject() {
         gameObjectManager = new GameObjectManager();
-        player = new Player();
+        players = new Player[2];
+        for (int i = 0; i < players.length; i++) {
+            players[i] = new Player();
+        }
+        players[1].position.x +=100;
     }
 
     @Override
@@ -303,6 +349,8 @@ public class TcpServerVerticle extends AbstractVerticle {
                             keyStack.push(keyCode);
                             break;
                         case SPACE:
+//                            switch (players[0])
+                            Player player = players[0];
                             if (!player.canAttack()) return;
                             Bubble b = player.attck();
                             if (gameObjectManager.hasItem(b)) {
@@ -338,8 +386,12 @@ public class TcpServerVerticle extends AbstractVerticle {
         stream.handler(netSocket -> {
             String socketId = netSocket.writeHandlerID();
             LOGGER.debug("New socket Id: " + socketId);
-            netSocket.handler(parser::handle);
+
+            netSocket.handler(parser);
+            // TODO 第一次链接发送  socketId - PlyaerId(替换)
+            //
             netSocket.write(socketId + "*" + "Server\n");
+            netSocket.write(players.length + "*" + "Syn_Players\n");
  
             SOCKET_MAP.put(socketId, netSocket);
             ACTIVE_SOCKET_MAP.put(socketId, System.currentTimeMillis());
@@ -357,8 +409,8 @@ public class TcpServerVerticle extends AbstractVerticle {
         // 传送地图数据
         vertx.setPeriodic(1000/60, t -> {
             // todo 同步角色位置
-            serverHelper.sendAll(new DoMessage(SYN_PLAYER, gson.toJson(player)));
-            serverHelper.sendAll(new DoMessage(UPDATE_ALL,gson.toJson(gameObjectManager.getItemsArr())));
+            serverHelper.sendAll(new DoMessage(SYN_PLAYER, gson.toJson(players)));
+//            serverHelper.sendAll(new DoMessage(UPDATE_ALL,gson.toJson(gameObjectManager.getItemsArr())));
         });
         // 检查心跳
         vertx.setPeriodic(1000 * 20, t -> {

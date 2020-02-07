@@ -12,10 +12,10 @@ import static com.ming.MVC.model.ImageUrl.bubble_red;
 public class Bubble extends Item implements BlockBox {
     private int timeCounter = 0;
     private int explodeTimer = 0;
-    private int power = 2;
+    public int power = 2;
     private boolean addSugerCount = false;
     private boolean hasLeaved=false;
-    private int playerId;
+    public int playerId;
 
     {
         this.unitType = UnitType.BUBBLE;
@@ -44,7 +44,6 @@ public class Bubble extends Item implements BlockBox {
         super(player.point.x,player.point.y);
 
         position = new Position(player.point.x*40,player.point.y*40);
-
         playerId=player.getId();
         power = player.getPower();
         image = bubble_red;
@@ -55,8 +54,7 @@ public class Bubble extends Item implements BlockBox {
         super(player.point.x,player.point.y);
 
         position = new Position(player.point.x*40,player.point.y*40);
-
-        playerId=player.getId();
+        playerId = player.getId();
         power = player.getPower();
 
         super.setPosition(position); //设置item的position
@@ -69,22 +67,14 @@ public class Bubble extends Item implements BlockBox {
 
     public Bubble(Position position) {
         this.position = position;
-        image = new Image("file:src/Images/Bubble/西瓜1.png");
-        System.out.println(position.x+"  "+position.y);
+        image = new Image("file:src/main/resources/Images/Bubble/糖炮红.gif");
         super.setPosition(position); //设置item的position
-
     }
 
     @Override
     public void draw(GraphicsContext g) {
-
         if(!dead) {
             g.drawImage(image, position.x, position.y,40,40);
-            explodeTimer += 20;
-            if(explodeTimer>=3000) {  //三秒后爆炸
-                MusicManager.bubbleBomb();
-                dead = true;
-            }
         }else {
             recycled = true;
         }
