@@ -4,9 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>groupId</groupId>
-    <artifactId>QQTang</artifactId>
+    <groupId>org.ming.QQTang-Internet</groupId>
+    <artifactId>QQTang-Internet</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>Client</module>
+        <module>Server</module>
+    </modules>
 
 
     <properties>
@@ -14,7 +19,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
-    
+
     <dependencies>
         <dependency>
             <groupId>io.vertx</groupId>
@@ -31,6 +36,18 @@
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
         </dependency>
-    </dependencies>
 
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.vertx</groupId>
+            <artifactId>vertx-core</artifactId>
+            <version>3.6.0</version>
+        </dependency>
+
+    </dependencies>
 </project>
