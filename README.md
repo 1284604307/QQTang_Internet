@@ -15,9 +15,10 @@ UI层使用JAVAFX-CANVAS绘制
 
 
 #### 使用说明
+1. 启动 Main.java main()
 
-1.  启动test.TcpServerVerticle.java
-2.  启动test.TcpClientVerticle.java
+x.  启动test.TcpServerVerticle.java < 修复中 >
+x.  启动test.TcpClientVerticle.java < 修复中 >
 
 #### 参与贡献
 
