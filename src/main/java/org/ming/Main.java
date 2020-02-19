@@ -6,13 +6,15 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import org.ming.controller.ConnectController;
 import org.ming.framework.Navigator;
 import org.ming.mapEditer.MapEditor;
-import org.ming.pojo.User;
+import org.ming.connect.model.User;
 import org.ming.view.HomePane;
 import org.ming.view.IndexPane;
 import org.ming.view.LocalGamePane;
 import org.ming.view.hall.HallView;
+import org.ming.view.loginView.LoginView;
 
 public class Main extends Application {
 
@@ -43,16 +45,24 @@ public class Main extends Application {
             return new HomePane(stage,jsonObject);
         }).route("/mapEditor", () -> {
             return new MapEditor(stage,jsonObject);
+        }).route("/login", () -> {
+            return new LoginView(stage,jsonObject);
         });
         root.getChildren().add(routes.initialRoute());
 
         stage.show();
 
-        Gson gson = new Gson();
-        User user = new User("李四",1);
-        jsonObject.put("user", gson.toJson(user));
+//        Gson gson = new Gson();
+//        User user = new User("李四",1);
+//        jsonObject.put("user", gson.toJson(user));
 //        jsonObject.put("user",user);
 
+        try {
+            ConnectController connect = new ConnectController(jsonObject);
+            connect.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 

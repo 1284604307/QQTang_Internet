@@ -8,7 +8,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import org.ming.model.base.ImageUrl;
-import org.ming.pojo.User;
+import org.ming.connect.model.User;
 
 public class SeatView extends AnchorPane {
 

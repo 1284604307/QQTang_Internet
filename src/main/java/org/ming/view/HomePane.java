@@ -6,9 +6,13 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
+import org.ming.controller.ConnectController;
 import org.ming.framework.PushAndPopPane;
-import org.ming.pojo.User;
+import org.ming.connect.model.User;
 import org.ming.view.homeView.GameRoomWithChairView;
+
+import java.util.Iterator;
+import java.util.Map;
 
 public class HomePane extends PushAndPopPane {
     private int homeIndex = 0;
@@ -34,11 +38,12 @@ public class HomePane extends PushAndPopPane {
         this.getChildren().add(showPane);
         stage.show();
 
-        homeIndex = jsonObject.getInteger("homeIndex");
+        String homeIndex = jsonObject.getString("homeIndex");
         number.setText(String.valueOf(homeIndex));
-        User user =new Gson().fromJson(jsonObject.getString("user"),User.class);
-//        User user = (User) jsonObject.getValue("user");
+        this.homeIndex = Integer.parseInt(homeIndex);
+        User user = ConnectController.user;
+//        User user =new Gson().fromJson(jsonObject.getString("user"),User.class);
         showPane.addUser(user);
-        user.setRoomIndex(homeIndex);
+        user.setRoomIndex(this.homeIndex);
     }
 }

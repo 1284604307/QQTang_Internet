@@ -16,11 +16,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="QQTang" />
+        <module name="Server" />
+        <module name="Client" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
+      <module name="Client" target="1.8" />
       <module name="QQTang" target="1.8" />
+      <module name="Server" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

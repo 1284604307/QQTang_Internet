@@ -1,6 +1,6 @@
 package com.q;
 
-import org.ming.pojo.User;
+import org.ming.connect.model.User;
 
 import java.util.ArrayList;
 

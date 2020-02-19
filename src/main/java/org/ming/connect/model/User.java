@@ -1,10 +1,10 @@
-package org.ming.pojo;
+package org.ming.connect.model;
 
 import org.ming.model.PlayerName;
 
 public class User {
     private int id;
-    private String name;
+    private String username;
     //房间号
     private int roomIndex;
     //座位号
@@ -17,7 +17,7 @@ public class User {
     }
 
     public User(String name,int id){
-        this.name = name;
+        this.username = name;
         this.id = id;
     }
 
@@ -46,11 +46,11 @@ public class User {
     }
 
     public String getName() {
-        return name;
+        return username;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.username = name;
     }
 
     public int getSeatIndex() {

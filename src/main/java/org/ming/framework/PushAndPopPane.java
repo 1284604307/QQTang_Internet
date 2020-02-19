@@ -1,11 +1,14 @@
 package org.ming.framework;
 
 import io.vertx.core.json.JsonObject;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class PushAndPopPane extends Pane {
-    private JsonObject parameters;
+    protected JsonObject parameters;
 
     public PushAndPopPane(Stage stage) {
         this.prefWidthProperty().bind(stage.getScene().widthProperty());
@@ -14,7 +17,7 @@ public class PushAndPopPane extends Pane {
 
     public PushAndPopPane(Stage stage, JsonObject parameters) {
         this.parameters = parameters;
-        this.setStyle("-fx-background-color: #ffffff");
+        this.setBackground(new Background(new BackgroundFill(Color.WHITE,null,null)));
     }
 
     public void disable() {
