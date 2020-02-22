@@ -16,14 +16,11 @@ import org.ming.model.exploding.Exploding;
 import org.ming.model.players.Player;
 import org.ming.model.prop.Prop;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+import java.io.*;
 
 public class World {
 
     private GameObjectManager gameObjectManager = new GameObjectManager();
-    private static Image gameWindowBg= new Image("file:src/main/resources\\Images\\BackgroundImage\\GameWindow.png");;
     private Player[] players ;
     private MusicManager musicManager = MusicManager.getManager();
 
@@ -35,6 +32,53 @@ public class World {
         this.players = players;
     }
 
+    public GameObjectManager getGameObjectManager() {
+        return gameObjectManager;
+    }
+
+    public void setGameObjectManager(GameObjectManager gameObjectManager) {
+        this.gameObjectManager = gameObjectManager;
+    }
+
+    public void loadMap(File file) throws IOException {
+        if (file==null)
+            file = new File("src\\比武大地图.map");
+        FileReader reader = new FileReader(file);
+        BufferedReader bReader = new BufferedReader(reader);//new一个BufferedReader对象，将文件内容读取到缓存
+        StringBuilder sb = new StringBuilder();//定义一个字符串缓存，将字符串存放缓存中
+        String s = "";
+        while ((s =bReader.readLine()) != null) {//逐行读取文件内容，不读取换行符和末尾的空格
+            sb.append(s + "\n");//将读取的字符串添加换行符后累加存放在缓存中
+        }
+        bReader.close();
+        String str = sb.toString();
+        System.out.println(str);
+        String[] unitTypes = str.split("\t");
+        int Y = Integer.parseInt(unitTypes[0]);
+        int X= Integer.parseInt(unitTypes[1]);
+        UnitType[][] maps = new UnitType[Y][X];
+
+        for (int y=0;y<maps.length;y++) {
+            for (int x=0;x<maps[y].length;x++) {
+                UnitType unitType = UnitType.valueOf(unitTypes[X * y + x + 2]);
+                maps[y][x] = unitType;
+                switch (unitType){
+                    case 比:
+                    case 武:
+                        Wall wall = new Wall(x, y);
+                        wall.setUnitType(unitType);
+                        gameObjectManager.getWalls()[y][x] = wall;
+                        break;
+                    case 桶:
+                        IronWall ironWall = new IronWall(x, y);
+                        ironWall.setUnitType(unitType);
+                        gameObjectManager.getWalls()[y][x] = ironWall;
+                        break;
+                }
+            }
+        }
+    }
+
     public void read(Stage stage ){
         FileChooser fileChooser = new FileChooser();//构建一个文件选择器实例
         fileChooser.setInitialDirectory(new File("src"));
@@ -42,52 +86,8 @@ public class World {
         File selectedFile = fileChooser.showOpenDialog(stage);
         System.out.println(selectedFile);
         try {
-            File file;
-            if (selectedFile!=null)
-                file = selectedFile.getAbsoluteFile();
-            else{
-                file = new File("src\\比武大地图.map");
-            }
-            System.out.println(file.getAbsolutePath());
-            System.out.println(file.getName());
-
-            FileReader reader = new FileReader(file);
-            BufferedReader bReader = new BufferedReader(reader);//new一个BufferedReader对象，将文件内容读取到缓存
-            StringBuilder sb = new StringBuilder();//定义一个字符串缓存，将字符串存放缓存中
-            String s = "";
-            while ((s =bReader.readLine()) != null) {//逐行读取文件内容，不读取换行符和末尾的空格
-                sb.append(s + "\n");//将读取的字符串添加换行符后累加存放在缓存中
-            }
-            bReader.close();
-            String str = sb.toString();
-            System.out.println(str);
-            String[] unitTypes = str.split("\t");
-            int Y = Integer.parseInt(unitTypes[0]);
-            int X= Integer.parseInt(unitTypes[1]);
-            UnitType[][] maps = new UnitType[Y][X];
-
-            for (int y=0;y<maps.length;y++) {
-                for (int x=0;x<maps[y].length;x++) {
-                    UnitType unitType = UnitType.valueOf(unitTypes[X * y + x + 2]);
-                    maps[y][x] = unitType;
-                    switch (unitType){
-                        case 比:
-                        case 武:
-                            Wall wall = new Wall(x, y);
-                            wall.setUnitType(unitType);
-                            gameObjectManager.getWalls()[y][x] = wall;
-                            break;
-                        case 桶:
-                            IronWall ironWall = new IronWall(x, y);
-                            ironWall.setUnitType(unitType);
-                            gameObjectManager.getWalls()[y][x] = ironWall;
-                            break;
-                    }
-                }
-            }
+            loadMap(selectedFile);
         }catch (Exception ignored) { }
-
-        this.getMusicManager().oBGM();
     }
 
     public boolean hasBubble(int y, int x){

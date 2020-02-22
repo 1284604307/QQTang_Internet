@@ -1,17 +1,18 @@
-package connect.model;
+package org.ming.connect.model;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Map;
+
 
 public class HomeInfo {
     private String name;
     private String index;
     private ArrayList<User> users;
 
-    public HomeInfo(String name, String index, Map<String,String> userMap) {
+    public HomeInfo(String name, String index, ArrayList<User> users) {
         this.name = name;
         this.index = index;
+        this.users = users;
 
     }
 
@@ -31,4 +32,12 @@ public class HomeInfo {
         this.index = index;
     }
 
+    public ArrayList<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(ArrayList<User> users) {
+        this.users = users;
+    }
 }
+

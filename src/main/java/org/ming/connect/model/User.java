@@ -11,6 +11,9 @@ public class User {
     private int seatIndex;
     //选择的角色
     private PlayerName playerName = PlayerName.火影;
+    //状态
+    private UserStatus status = UserStatus.NONE;
+
 
     public User(){
 
@@ -59,5 +62,13 @@ public class User {
 
     public void setSeatIndex(int seatIndex) {
         this.seatIndex = seatIndex;
+    }
+
+    public UserStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(UserStatus status) {
+        this.status = status;
     }
 }

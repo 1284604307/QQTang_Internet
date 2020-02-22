@@ -39,6 +39,7 @@ public class LoginView extends PushAndPopPane {
             ConnectController.write(Common.LOGIN,gson.toJson(user));
             ConnectController.user = user;
         });
+
         Button createRoom = new Button("创建房间");
         createRoom.setOnMouseClicked(event -> {
             ConnectController.write(Common.CREATE_ROOM,"");

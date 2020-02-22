@@ -17,15 +17,11 @@ public class SeatView extends AnchorPane {
     private final Text NONE = new Text("\n无\n人");
     private final Text BAN = new Text("\n\n禁");
     private Text showText = NONE;
-    protected ImageView player = new ImageView();
+    private ImageView player = new ImageView();
     private int row;
     private int col;
     private int index;
     private boolean open = true;
-
-    public SeatView() {
-        this(0,0);
-    }
 
     public SeatView(int row,int col){
         super();

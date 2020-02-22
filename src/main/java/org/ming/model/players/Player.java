@@ -46,14 +46,14 @@ public class Player extends GameObject implements RunBox, Serializable {
     private int kill = 0;
     private int help = 0;
 
-
-
-    private byte dir = 0; // 上1 下0 左2 右3
     private int power = 1;
     private int speed = 3;
     private int bubbles = 2;
     private int putBubbles = 0;
 
+    {
+        this.dir = DOWN;
+    }
 
     public int getId(){return 0;}
 

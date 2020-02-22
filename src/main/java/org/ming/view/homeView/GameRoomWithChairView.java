@@ -2,13 +2,13 @@ package org.ming.view.homeView;
 
 import javafx.scene.layout.AnchorPane;
 import org.ming.connect.model.User;
+import org.ming.controller.ConnectController;
 
 import java.util.ArrayList;
 
 public class GameRoomWithChairView extends AnchorPane {
 
     private SeatView[] seatViews ;
-    private ArrayList<User> users = new ArrayList<>();
     public GameRoomWithChairView() {
         super();
 
@@ -33,8 +33,17 @@ public class GameRoomWithChairView extends AnchorPane {
 
     }
 
+    public void update(ArrayList<User> users){
+        for (SeatView seatView : seatViews) {
+            seatView.setUser(null);
+        }
+        for (User user : users) {
+            addUser(user);
+        }
+
+    }
+
     public void addUser(User user){
-        users.add(user);
         for (SeatView seatView : seatViews) {
             if (seatView.empty()) {
                 seatView.setUser(user);
@@ -51,11 +60,4 @@ public class GameRoomWithChairView extends AnchorPane {
         this.seatViews = seatViews;
     }
 
-    public ArrayList<User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(ArrayList<User> users) {
-        this.users = users;
-    }
 }

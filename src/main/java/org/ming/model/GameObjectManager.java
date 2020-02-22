@@ -10,8 +10,8 @@ import java.util.ArrayList;
 
 public class GameObjectManager {
 
-    private int rows = 13;
-    private int cols = 15;
+    private transient int rows = 13;
+    private transient int cols = 15;
     private Wall[][] walls = new Wall[rows][cols];
     private Bubble[][] bubbles = new Bubble[rows][cols];
     private Prop[][] props = new Prop[rows][cols];

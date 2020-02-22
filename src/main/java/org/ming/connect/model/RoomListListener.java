@@ -1,4 +1,9 @@
 package org.ming.connect.model;
 
-public class RoomListListener {
+import org.ming.model.RoomList;
+
+@FunctionalInterface
+public interface RoomListListener {
+
+    public void onChange(RoomList roomList);
 }

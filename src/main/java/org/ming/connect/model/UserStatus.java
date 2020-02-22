@@ -1,4 +1,4 @@
-package connect.model;
+package org.ming.connect.model;
 
 public enum UserStatus {
     Monster,

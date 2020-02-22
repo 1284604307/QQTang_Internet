@@ -19,7 +19,7 @@ public abstract class GameObject {
     protected Point point;
     // 真实坐标
     public Position position;
-    private byte dir = CENTER;
+    protected byte dir = CENTER;
     protected Image image;
 
     public GameObject(){

@@ -1,14 +1,18 @@
 package org.ming.view.hall;
 
 import io.vertx.core.json.JsonObject;
+import javafx.application.Platform;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.*;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.ming.connect.enums.Common;
+import org.ming.connect.model.Room;
 import org.ming.controller.ConnectController;
 import org.ming.framework.Navigator;
 import org.ming.framework.PushAndPopPane;
+import org.ming.model.RoomList;
 
 public class HallView extends PushAndPopPane {
 
@@ -28,20 +32,30 @@ public class HallView extends PushAndPopPane {
         rootPane.setTop(title);
 
 
-        //  240 X 100  一页10个最多
-        ConnectController.write(Common.QUERY_ROOM,"0,1");
-
+        RoomList rooms = ConnectController.rooms;
         TilePane left = new TilePane();
+        left.setHgap(2);
+        left.setVgap(5);
         left.setPrefWidth(500);
         left.setPrefHeight(500);
+        left.setStyle("-fx-background-color: #3355ffdd;-fx-padding:3");
         rootPane.setLeft(left);
 
+        rooms.addListener(roomList -> {
+            System.out.println("有更新");
+            Platform.runLater(() -> {
+                for (Room room : rooms) {
+                    System.out.println("添加了" + room.getIndex());
+                    RoomCard roomCard = new RoomCard(room.getIndex(), "测试用，无名", 8, 1);
+                    left.getChildren().add(roomCard);
+                }
+            });
+        });
 
         VBox right = new VBox();
         right.setPrefWidth(300);
         right.setPrefHeight(500);
         rootPane.setRight(right);
-        left.setStyle("-fx-background-color: black");
         rootPane.setStyle("-fx-background-color: white");
 
         VBox userPane = new VBox();
@@ -74,5 +88,7 @@ public class HallView extends PushAndPopPane {
 //            Navigator.pushNamed("/home");
         });
 
+        //  240 X 100  一页10个最多
+        ConnectController.write(Common.QUERY_ROOM,"0,1");
     }
 }

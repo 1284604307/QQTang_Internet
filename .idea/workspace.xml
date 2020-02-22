@@ -2,95 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_4_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_22.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_3_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/Client.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ming/connect/enums/Common.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ming/controller/ConnectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/q/GameConnectThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ming/connect/model/HomeInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ming/connect/model/Room.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ming/connect/model/RoomListListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ming/connect/model/UserStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ming/model/RoomList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ming/view/NetGamePane.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ming/view/hall/RoomCard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QQTang.iml" beforeDir="false" afterPath="$PROJECT_DIR$/QQTang.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/q/RoomThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/q/RoomThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/q/ServerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/q/ServerMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/target/classes/com/q/RoomThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/Server/target/classes/com/q/RoomThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/target/classes/com/q/ServerMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/Server/target/classes/com/q/ServerMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/target/classes/com/q/model/RoomOB.class" beforeDir="false" afterPath="$PROJECT_DIR$/Server/target/classes/com/q/model/RoomOB.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/ming/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ming/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ming/framework/PushAndPopPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ming/framework/PushAndPopPane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ming/pojo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ming/connect/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ming/connect/enums/Common.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ming/connect/enums/Common.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ming/connect/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ming/connect/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ming/controller/ConnectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ming/controller/ConnectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ming/model/GameObjectManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ming/model/GameObjectManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ming/model/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ming/model/World.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ming/model/baseInterface/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ming/model/baseInterface/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ming/model/exploding/Exploding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ming/model/exploding/Exploding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ming/model/players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ming/model/players/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/ming/view/HomePane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ming/view/HomePane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ming/view/IndexPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ming/view/IndexPane.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/ming/view/hall/HallView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ming/view/hall/HallView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/ming/view/homeView/GameRoomWithChairView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ming/view/homeView/GameRoomWithChairView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/ming/view/homeView/SeatView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ming/view/homeView/SeatView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/ming/view/loginView/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ming/view/loginView/LoginView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/QQTang-Internet.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/LoadingPane.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/LoadingPane.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/ming/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/controller/KeyStack.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/controller/KeyStack.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/controller/ServerHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/controller/ServerHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/framework/Audio.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/framework/Audio.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/framework/Constructor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/framework/Constructor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/framework/MusicManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/framework/MusicManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/framework/Navigator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/framework/Navigator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/framework/PushAndPopPane.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/framework/PushAndPopPane.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/gameStarter/LocalGame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/gameStarter/LocalGame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/gameStarter/LocalGame$MainUpdate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/gameStarter/LocalGame$MainUpdate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/gameStarter/LocalGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/gameStarter/LocalGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/mapEditer/MapEditor$UnitImage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/mapEditer/MapEditor$UnitImage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/mapEditer/MapEditor$aT.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/mapEditer/MapEditor$aT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/mapEditer/MapEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/mapEditer/MapEditor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/connect/enums/Common.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/connect/enums/Common.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/connect/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/connect/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/controller/ConnectController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/controller/ConnectController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/controller/ConnectController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/controller/ConnectController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/controller/ConnectController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/controller/ConnectController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/ming/model/GameObjectManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/model/GameObjectManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/model/Map/FlowerPort.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/model/Map/FlowerPort.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/model/Map/IronWall.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/model/Map/IronWall.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/model/Map/RedWall.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/model/Map/RedWall.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/model/Map/Wall.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/model/Map/Wall.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/model/Map/仙人掌.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/model/Map/仙人掌.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/model/PlayerName.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/model/PlayerName.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/ming/model/World$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/model/World$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/ming/model/World.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/model/World.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/model/base/BaseData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/model/base/BaseData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/model/base/ImageUrl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/model/base/ImageUrl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/model/base/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/model/base/Point.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/model/base/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/model/base/Position.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/model/base/TransBaseUnit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/model/base/TransBaseUnit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/model/base/UnitType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/model/base/UnitType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/model/baseInterface/AttackObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/model/baseInterface/AttackObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/model/baseInterface/BlockBox.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/model/baseInterface/BlockBox.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/ming/model/baseInterface/GameObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/model/baseInterface/GameObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/model/baseInterface/RunBox.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/model/baseInterface/RunBox.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/model/bubble/Bubble.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/model/bubble/Bubble.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/ming/model/exploding/Exploding.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/model/exploding/Exploding.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/model/players/Player$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/model/players/Player$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/ming/model/players/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/model/players/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/model/players/PlayerStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/model/players/PlayerStatus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/model/players/TransStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/model/players/TransStatus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/model/prop/Prop.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/model/prop/Prop.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/model/prop/TransProp/KngintProp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/model/prop/TransProp/KngintProp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/model/prop/TransProp/ReflexiveMonsterProp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/model/prop/TransProp/ReflexiveMonsterProp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/model/prop/威力嘎嘎.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/model/prop/威力嘎嘎.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/model/prop/糖炮多多.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/model/prop/糖炮多多.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/model/prop/跑的快快.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/model/prop/跑的快快.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/pojo/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/test/Behavior.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/test/Behavior.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/test/DoMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/test/DoMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/test/MsgUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/test/MsgUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/test/TcpClientVerticle$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/test/TcpClientVerticle$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/test/TcpClientVerticle$MainUpdate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/test/TcpClientVerticle$MainUpdate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/test/TcpClientVerticle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/test/TcpClientVerticle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/test/TcpServerVerticle$MainUpdateFixed.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/test/TcpServerVerticle$MainUpdateFixed.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/test/TcpServerVerticle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/test/TcpServerVerticle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/test/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/test/test.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/ming/view/HomePane.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/view/HomePane.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/view/IndexPane.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/view/IndexPane.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/view/LocalGamePane$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/view/LocalGamePane$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/view/LocalGamePane$MainUpdate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/view/LocalGamePane$MainUpdate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ming/view/LocalGamePane.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/view/LocalGamePane.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/ming/view/hall/HallView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/view/hall/HallView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/ming/view/homeView/GameRoomWithChairView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/view/homeView/GameRoomWithChairView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/ming/view/homeView/SeatView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/view/homeView/SeatView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/ming/view/loginView/LoginView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ming/view/loginView/LoginView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/test$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/test$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/test$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/test.class" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -155,63 +114,113 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/view/HomePane.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="39" column="30" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
+            <state relative-caret-position="-215">
+              <caret line="42" column="43" selection-start-line="42" selection-start-column="43" selection-end-line="42" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server/src/main/java/com/q/ServerMain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="183">
+              <caret line="121" column="49" selection-start-line="121" selection-start-column="49" selection-end-line="121" selection-end-column="49" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#722#723#0" expanded="true" />
+                <element signature="e#764#765#0" expanded="true" />
+                <element signature="e#2356#2591#1" />
+                <element signature="method#createRoom#0;class#ServerMain#0" />
+                <element signature="e#9618#9619#0" expanded="true" />
+                <element signature="e#9681#9682#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/test.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/controller/ConnectController.java">
+        <entry file="file://$PROJECT_DIR$/Server/src/main/java/com/q/GameConnectThread.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="271">
-              <caret line="105" column="54" selection-start-line="105" selection-start-column="54" selection-end-line="105" selection-end-column="54" />
+              <caret line="89" column="33" selection-start-line="89" selection-start-column="33" selection-end-line="89" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#624#625#0" expanded="true" />
-                <element signature="e#668#669#0" expanded="true" />
-                <element signature="e#537#538#0" expanded="true" />
-                <element signature="e#577#578#0" expanded="true" />
-                <element signature="e#1036#1037#0" expanded="true" />
-                <element signature="e#1105#1106#0" expanded="true" />
-                <element signature="e#2339#2340#0" expanded="true" />
-                <element signature="e#2381#2382#0" expanded="true" />
+                <element signature="e#4133#4134#0" expanded="true" />
+                <element signature="e#4168#4169#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/view/loginView/LoginView.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/view/NetGamePane.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="33" column="32" lean-forward="true" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="33" />
+            <state relative-caret-position="33">
+              <caret line="130" column="66" selection-start-line="130" selection-start-column="66" selection-end-line="130" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1311#1312#0" expanded="true" />
+                <element signature="e#1355#1356#0" expanded="true" />
+                <element signature="e#5421#5422#0" expanded="true" />
+                <element signature="e#5466#5467#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/view/hall/HallView.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/model/players/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="31" column="44" lean-forward="true" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="154">
+              <caret line="119" column="22" selection-start-line="119" selection-start-column="22" selection-end-line="119" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/view/HomePane.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/model/GameObjectManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="26" column="21" lean-forward="true" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+            <state relative-caret-position="319">
+              <caret line="65" column="5" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/model/exploding/Exploding.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/controller/ConnectController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1083">
+              <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1536#1537#0" expanded="true" />
+                <element signature="e#1568#1569#0" expanded="true" />
+                <element signature="e#1803#1804#0" expanded="true" />
+                <element signature="e#1861#1862#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -229,29 +238,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>CENTER</find>
-      <find>justJudge</find>
-      <find>Gson</find>
-      <find>ANIMAT</find>
-      <find>open</find>
-      <find>openExplore</find>
-      <find>心跳回应超时</find>
-      <find>服务器解包</find>
-      <find>BUBBLE</find>
-      <find>REMOVE</find>
-      <find>REMOVE_B</find>
-      <find>OPE</find>
-      <find>SENDALL</find>
-      <find>EX</find>
-      <find>explodings</find>
-      <find>GAMEOBJE</find>
-      <find>UPDATE</find>
-      <find>updateitem</find>
-      <find>unity</find>
-      <find>OPEN</find>
-      <find>dead</find>
-      <find>RECYC</find>
-      <find>RECYCLED</find>
       <find>SYN</find>
       <find>PLAYER</find>
       <find>PLAY</find>
@@ -259,6 +245,29 @@
       <find>players</find>
       <find>player</find>
       <find>navigator</find>
+      <find>users</find>
+      <find>START</find>
+      <find>BGM</find>
+      <find>LOAD</find>
+      <find>link</find>
+      <find>DIR</find>
+      <find>INIT</find>
+      <find>INIT_</find>
+      <find>1请求同步</find>
+      <find>UDP</find>
+      <find>INIT_GAME</find>
+      <find>init</find>
+      <find>tc</find>
+      <find>tcp</find>
+      <find>linkC</find>
+      <find>send</find>
+      <find>DOWN</find>
+      <find>KEYDOWN</find>
+      <find>PLAYERS</find>
+      <find>syn_game</find>
+      <find>music</find>
+      <find>new Thr</find>
+      <find>SEND</find>
     </findStrings>
     <replaceStrings>
       <replace>file:src/main/resources</replace>
@@ -275,24 +284,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Prop/TransProp/ReflexiveMonsterProp.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/ming/Player.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/ming/clientTest.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/log4j.properties" />
-        <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Command.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/ming/TcpServerVerticle.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/ming/DoMessage.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/ming/TcpClientVerticle.java" />
-        <option value="$PROJECT_DIR$/src/main/java/test/MsgUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ming/MusicManager.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/ming/serverTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Player.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/ming/MsgUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ming/LocalGameApplication.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ming/NetServer/Server.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ming/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Behavior.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Bubble.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Item.java" />
@@ -314,18 +305,36 @@
         <option value="$PROJECT_DIR$/src/main/java/test/TcpServerVerticle.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ming/MVC/controller/ServerHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/test/TcpClientVerticle.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/ming/connect/enums/Common.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/ming/LoadingPane.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/ming/pojo/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/ming/view/loginView/LOGIN_SUCCESS.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/ming/framework/PushAndPopPane.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/ming/view/IndexPane.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/ming/connect/model/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/ming/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/ming/view/loginView/LoginView.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/ming/view/HomePane.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/ming/connect/model/Room.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/ming/connect/model/RoomListListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/ming/model/RoomList.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/ming/view/hall/HallView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/ming/view/hall/RoomCard.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/ming/connect/model/HomeInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/ming/connect/model/UserStatus.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/ming/connect/model/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/ming/connect/enums/Common.java" />
+        <option value="$PROJECT_DIR$/Client/src/main/java/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/ming/view/loginView/LoginView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/ming/view/homeView/SeatView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/ming/view/homeView/GameRoomWithChairView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/ming/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/ming/model/GameObjectManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/ming/model/World.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/ming/connect/GameConnectThread.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/ming/model/exploding/Exploding.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/ming/controller/ConnectController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/ming/model/players/Player.java" />
+        <option value="$PROJECT_DIR$/Server/src/main/java/com/q/ServerMain.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/ming/view/HomePane.java" />
+        <option value="$PROJECT_DIR$/src/test/java/test.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/ming/view/NetGamePane.java" />
+        <option value="$PROJECT_DIR$/Server/src/main/java/com/q/GameConnectThread.java" />
       </list>
     </option>
   </component>
@@ -342,9 +351,10 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-38" />
-    <option name="width" value="1551" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="373" />
+    <option name="y" value="2" />
+    <option name="width" value="1556" />
     <option name="height" value="1038" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -356,6 +366,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -366,32 +378,6 @@
             <path>
               <item name="QQTang_Internet" type="b2602c69:ProjectViewProjectNode" />
               <item name="QQTang_Internet" type="462c0819:PsiDirectoryNode" />
-              <item name="Client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QQTang_Internet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QQTang_Internet" type="462c0819:PsiDirectoryNode" />
-              <item name="Client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QQTang_Internet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QQTang_Internet" type="462c0819:PsiDirectoryNode" />
-              <item name="Client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QQTang_Internet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QQTang_Internet" type="462c0819:PsiDirectoryNode" />
-              <item name="Client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QQTang_Internet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QQTang_Internet" type="462c0819:PsiDirectoryNode" />
               <item name="Server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -427,16 +413,6 @@
             <path>
               <item name="QQTang_Internet" type="b2602c69:ProjectViewProjectNode" />
               <item name="QQTang_Internet" type="462c0819:PsiDirectoryNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="q" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QQTang_Internet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QQTang_Internet" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -468,16 +444,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ming" type="462c0819:PsiDirectoryNode" />
               <item name="connect" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QQTang_Internet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QQTang_Internet" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ming" type="462c0819:PsiDirectoryNode" />
-              <item name="connect" type="462c0819:PsiDirectoryNode" />
-              <item name="enums" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="QQTang_Internet" type="b2602c69:ProjectViewProjectNode" />
@@ -514,6 +480,16 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ming" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="players" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QQTang_Internet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QQTang_Internet" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ming" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -524,7 +500,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ming" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="hall" type="462c0819:PsiDirectoryNode" />
+              <item name="homeView" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="QQTang_Internet" type="b2602c69:ProjectViewProjectNode" />
@@ -542,12 +518,17 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="QQTang_Internet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QQTang_Internet" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -567,7 +548,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/java" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/org/ming" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../testVertx" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.0" />
@@ -577,23 +558,23 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\工程包\QQTang\src\main\resources" />
-      <recent name="D:\工程包\QQTang\src" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.ming.view.loginView" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.ming" />
       <recent name="" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="org.ming.view.loginView" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\工程包\QQTang\src\main\resources" />
+      <recent name="D:\工程包\QQTang\src" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.ming.view" />
       <recent name="org.ming.connect.model" />
       <recent name="com.ming" />
       <recent name="com.ming.MVC.model.Prop.TransProp" />
       <recent name="com.ming.MVC.model.Prop" />
-      <recent name="com.ming.MVC.model.Map" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\JAVA_PROJECTS\QQTang_Internet\src\main\java\org\ming" />
@@ -615,7 +596,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main (1)">
+  <component name="RunManager" selected="Application.ServerMain">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -634,13 +615,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LocalGameApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ming.LocalGameApplication" />
+    <configuration name="LocalGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.ming.gameStarter.LocalGame" />
       <module name="QQTang" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.ming.*" />
+          <option name="PATTERN" value="org.ming.gameStarter.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -662,6 +643,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Client" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.ming.Main" />
       <module name="QQTang" />
@@ -678,55 +667,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TcpClientVerticle (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test.TcpClientVerticle" />
-      <module name="QQTang" />
+    <configuration name="ServerMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.q.ServerMain" />
+      <module name="Server" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TcpClientVerticle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test.TcpClientVerticle" />
-      <module name="QQTang" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TcpServerVerticle (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test.TcpServerVerticle" />
-      <module name="QQTang" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TcpServerVerticle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test.TcpServerVerticle" />
-      <module name="QQTang" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
+          <option name="PATTERN" value="com.q.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -735,6 +682,14 @@
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test" />
+      <module name="QQTang" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -773,20 +728,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="Application.TcpServerVerticle" />
-      <item itemvalue="Application.TcpClientVerticle" />
-      <item itemvalue="Application.TcpServerVerticle (1)" />
-      <item itemvalue="Application.TcpClientVerticle (1)" />
-      <item itemvalue="Application.LocalGameApplication" />
       <item itemvalue="Application.Main (1)" />
+      <item itemvalue="Application.Main (2)" />
+      <item itemvalue="Application.ServerMain" />
+      <item itemvalue="Application.LocalGame" />
+      <item itemvalue="Application.test" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.TcpClientVerticle" />
-        <item itemvalue="Application.TcpServerVerticle (1)" />
-        <item itemvalue="Application.TcpClientVerticle (1)" />
-        <item itemvalue="Application.LocalGameApplication" />
+        <item itemvalue="Application.ServerMain" />
+        <item itemvalue="Application.test" />
+        <item itemvalue="Application.LocalGame" />
+        <item itemvalue="Application.Main (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -822,12 +776,16 @@
       <workItem from="1581050114344" duration="7077000" />
       <workItem from="1581063816537" duration="1981000" />
       <workItem from="1582068811550" duration="4156000" />
-      <workItem from="1582113862681" duration="16277000" />
+      <workItem from="1582113862681" duration="16488000" />
+      <workItem from="1582158062164" duration="13846000" />
+      <workItem from="1582195516212" duration="2983000" />
+      <workItem from="1582208682014" duration="1855000" />
+      <workItem from="1582225346847" duration="37405000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="244432000" />
+    <option name="totallyTimeSpent" value="300732000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -839,32 +797,32 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-30" y="0" width="1251" height="837" extended-state="0" />
+    <frame x="-7" y="-7" width="1563" height="845" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.19614418" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.16611296" />
       <window_info id="Structure" order="1" weight="0.25" />
-      <window_info id="Favorites" order="2" />
+      <window_info id="Favorites" order="2" weight="0.32956812" />
       <window_info id="Designer" order="3" />
       <window_info id="Image Layers" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="UI Designer" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32959327" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.19574468" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.44680852" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23141655" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4460028" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32925472" />
       <window_info anchor="bottom" id="Application Servers" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Problems" order="9" />
-      <window_info anchor="bottom" id="Changes" order="10" />
-      <window_info anchor="bottom" id="Profiler" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="12" weight="0.32925472" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.3148936" />
-      <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="15" />
+      <window_info anchor="bottom" id="Problems" order="8" />
+      <window_info anchor="bottom" id="Changes" order="9" />
+      <window_info anchor="bottom" id="Profiler" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" weight="0.32819074" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3141655" />
+      <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="14" />
+      <window_info anchor="bottom" id="Version Control" order="15" weight="0.32959327" />
       <window_info anchor="bottom" id="Terminal" order="16" weight="0.32925472" />
       <window_info anchor="bottom" id="Duplicates" order="17" weight="0.32921347" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -880,29 +838,29 @@
       <window_info anchor="right" id="Theme Preview" order="10" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.19614418" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.1667774" />
       <window_info id="Structure" order="1" weight="0.25" />
-      <window_info id="Favorites" order="2" />
+      <window_info id="Favorites" order="2" weight="0.32956812" />
       <window_info id="Designer" order="3" />
       <window_info id="Image Layers" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="UI Designer" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32959327" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.19574468" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.33704117" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.19495091" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4460028" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32925472" />
       <window_info anchor="bottom" id="Application Servers" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Problems" order="9" />
-      <window_info anchor="bottom" id="Changes" order="10" />
-      <window_info anchor="bottom" id="Profiler" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="12" weight="0.32925472" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.31565657" />
-      <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="15" />
+      <window_info anchor="bottom" id="Problems" order="8" />
+      <window_info anchor="bottom" id="Changes" order="9" />
+      <window_info anchor="bottom" id="Profiler" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" weight="0.32819074" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3148936" />
+      <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="14" />
+      <window_info anchor="bottom" id="Version Control" order="15" weight="0.32959327" />
       <window_info anchor="bottom" id="Terminal" order="16" weight="0.32925472" />
       <window_info anchor="bottom" id="Duplicates" order="17" weight="0.32921347" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -912,7 +870,7 @@
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info anchor="right" id="Maven" order="7" />
+      <window_info anchor="right" id="Maven" order="7" weight="0.32942164" />
       <window_info anchor="right" id="Capture Analysis" order="8" />
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info anchor="right" id="Theme Preview" order="10" />
@@ -933,6 +891,12 @@
           <line>33</line>
           <properties />
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Server/src/main/java/com/q/GameConnectThread.java</url>
+          <line>41</line>
+          <properties />
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -991,129 +955,198 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/LocalGameApplication.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/NetServer/Server.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/Main.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/String.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Enum.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar!/com/google/gson/Gson.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/model/PlayerName.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="486" column="17" selection-start-line="486" selection-start-column="17" selection-end-line="486" selection-end-column="17" />
+        <state relative-caret-position="66">
+          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MusicManager.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/test.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/test/MsgUtils.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MapEditor.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Bubble.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Behavior.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Exploding.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/GameObjectManager.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Map/FlowerPort.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Map/仙人掌.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Map/IronWall.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Item.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Prop/糖炮多多.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Prop/威力嘎嘎.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Prop/跑的快快.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Prop/Prop.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/ImageUrl.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/LocalGameObjectManager.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Map/Wall.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/Map/RedWall.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/UnitType.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/model/TransUnit.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ming/MVC/controller/ServerHelper.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/test/TcpServerVerticle.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/test/TcpClientVerticle.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/LoadingPane.java">
+    <entry file="jar://C:/JAVA/JDK1.8/javafx-src.zip!/javafx/beans/Observable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+        <state relative-caret-position="-168">
+          <caret line="50" column="17" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/JAVA/JDK1.8/src.zip!/java/util/Observable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2464">
+          <caret line="61" column="13" selection-start-line="61" selection-start-column="13" selection-end-line="61" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/JAVA/JDK1.8/javafx-src.zip!/javafx/beans/InvalidationListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="48" column="17" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/JAVA/JDK1.8/javafx-src.zip!/javafx/collections/ListChangeListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="129" column="29" selection-start-line="129" selection-start-column="29" selection-end-line="129" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/connect/model/RoomListListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/connect/model/Room.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#509#510#0" expanded="true" />
-            <element signature="e#537#538#0" expanded="true" />
+            <element signature="e#153#154#0" expanded="true" />
+            <element signature="e#182#183#0" expanded="true" />
+            <element signature="e#223#224#0" expanded="true" />
+            <element signature="e#259#260#0" expanded="true" />
+            <element signature="e#130#131#0" expanded="true" />
+            <element signature="e#157#158#0" expanded="true" />
+            <element signature="e#197#198#0" expanded="true" />
+            <element signature="e#229#230#0" expanded="true" />
+            <element signature="e#258#259#0" expanded="true" />
+            <element signature="e#286#287#0" expanded="true" />
+            <element signature="e#325#326#0" expanded="true" />
+            <element signature="e#359#360#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/mapEditer/MapEditor.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-core/3.6.0/vertx-core-3.6.0.jar!/io/vertx/core/net/impl/NetSocketImpl.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+        <state relative-caret-position="104">
+          <caret line="346" selection-start-line="346" selection-end-line="346" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-core/3.6.0/vertx-core-3.6.0.jar!/io/vertx/core/impl/EventLoopContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="e#1248#1249#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-core/3.6.0/vertx-core-3.6.0.jar!/io/vertx/core/impl/ContextImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="160" selection-start-line="160" selection-end-line="160" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-core/3.6.0/vertx-core-3.6.0.jar!/io/vertx/core/net/impl/VertxHandler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="154" selection-start-line="154" selection-end-line="154" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-transport/4.1.30.Final/netty-transport-4.1.30.Final.jar!/io/netty/channel/AbstractChannelHandlerContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="294" selection-start-line="294" selection-end-line="294" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-transport/4.1.30.Final/netty-transport-4.1.30.Final.jar!/io/netty/channel/DefaultChannelPipeline.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="769" selection-start-line="769" selection-end-line="769" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-transport/4.1.30.Final/netty-transport-4.1.30.Final.jar!/io/netty/channel/nio/AbstractNioByteChannel.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="241" selection-start-line="241" selection-end-line="241" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-transport/4.1.30.Final/netty-transport-4.1.30.Final.jar!/io/netty/channel/nio/NioEventLoop.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="296" selection-start-line="296" selection-end-line="296" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-core/3.6.0/vertx-core-3.6.0.jar!/io/vertx/core/net/impl/ConnectionBase.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="353" selection-start-line="353" selection-end-line="353" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/connect/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        <state relative-caret-position="550">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="e#1223#1224#0" expanded="true" />
+            <element signature="e#1252#1253#0" expanded="true" />
+            <element signature="e#1300#1301#0" expanded="true" />
+            <element signature="e#1336#1337#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/view/loginView/LOGIN_SUCCESS.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/connect/model/UserStatus.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/connect/model/HomeInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="638">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+          <folding>
+            <element signature="e#662#663#0" expanded="true" />
+            <element signature="e#690#691#0" expanded="true" />
+            <element signature="e#741#742#0" expanded="true" />
+            <element signature="e#775#776#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/connect/enums/Common.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/view/hall/HallView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+        <state relative-caret-position="616">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/src/main/java/com/q/ServerMain.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/view/hall/RoomCard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-44">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        <state relative-caret-position="770">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/framework/Constructor.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/model/RoomList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/framework/PushAndPopPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-22">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-core/3.6.0/vertx-core-3.6.0.jar!/io/vertx/core/AbstractVerticle.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-core/3.6.0/vertx-core-3.6.0.jar!/io/vertx/core/json/JsonObject.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2088">
-          <caret line="247" column="22" selection-start-line="247" selection-start-column="22" selection-end-line="247" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/JAVA/JDK1.8/javafx-src.zip!/com/sun/glass/ui/InvokeLaterDispatcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="94" column="30" selection-start-line="94" selection-start-column="30" selection-end-line="94" selection-end-column="30" />
+        <state relative-caret-position="1518">
+          <caret line="84" selection-start-line="84" selection-end-line="84" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/framework/Navigator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="42" column="79" selection-start-line="42" selection-start-column="69" selection-end-line="42" selection-end-column="79" />
+        <state relative-caret-position="107">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
           <folding>
             <element signature="e#689#690#0" expanded="true" />
             <element signature="e#762#763#0" expanded="true" />
@@ -1125,79 +1158,247 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/model/PlayerName.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/view/IndexPane.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="603">
-          <caret line="34" column="46" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
+        <state relative-caret-position="173">
+          <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/connect/model/User.java">
+    <entry file="file://$PROJECT_DIR$/Client/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="8" column="15" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="15" />
+        <state relative-caret-position="-161">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
           <folding>
-            <element signature="e#619#620#0" expanded="true" />
-            <element signature="e#661#662#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2253#2254#0" expanded="true" />
+            <element signature="e#2277#2278#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/controller/KeyStack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="39" column="30" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
+        <state relative-caret-position="88">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/view/HomePane.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/LoadingPane.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="26" column="21" lean-forward="true" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+        <state relative-caret-position="132">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/view/loginView/LoginView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="33" column="32" lean-forward="true" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="33" />
+        <state relative-caret-position="352">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/view/hall/HallView.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/view/homeView/GameRoomWithChairView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="31" column="44" lean-forward="true" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="44" />
+        <state relative-caret-position="264">
+          <caret line="37" column="24" selection-end-line="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/view/homeView/SeatView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="98" column="23" selection-end-line="110" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1881#1882#0" expanded="true" />
+            <element signature="e#1910#1911#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/gameStarter/LocalGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-616">
+          <caret line="28" column="44" lean-forward="true" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-core/3.6.0/vertx-core-3.6.0.jar!/io/vertx/core/datagram/impl/DatagramSocketImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="167" selection-start-line="167" selection-end-line="167" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-core/3.6.0/vertx-core-3.6.0.jar!/io/vertx/core/AsyncResult.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="919">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-core/3.6.0/vertx-core-3.6.0.jar!/io/vertx/core/streams/impl/InboundBuffer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="178" selection-start-line="178" selection-end-line="178" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/model/baseInterface/GameObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/model/base/BaseData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/model/World.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="723">
+          <caret line="66" column="27" selection-start-line="66" selection-start-column="27" selection-end-line="66" selection-end-column="27" />
+          <folding>
+            <element signature="method#read#0;class#World#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/src/main/java/com/q/RoomThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/model/exploding/Exploding.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/model/players/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="119" column="22" selection-start-line="119" selection-start-column="22" selection-end-line="119" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/connect/enums/Common.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="97" selection-start-line="4" selection-start-column="97" selection-end-line="4" selection-end-column="97" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/controller/ConnectController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="105" column="54" selection-start-line="105" selection-start-column="54" selection-end-line="105" selection-end-column="54" />
+        <state relative-caret-position="1083">
+          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#624#625#0" expanded="true" />
-            <element signature="e#668#669#0" expanded="true" />
-            <element signature="e#537#538#0" expanded="true" />
-            <element signature="e#577#578#0" expanded="true" />
-            <element signature="e#1036#1037#0" expanded="true" />
-            <element signature="e#1105#1106#0" expanded="true" />
-            <element signature="e#2339#2340#0" expanded="true" />
-            <element signature="e#2381#2382#0" expanded="true" />
+            <element signature="e#1536#1537#0" expanded="true" />
+            <element signature="e#1568#1569#0" expanded="true" />
+            <element signature="e#1803#1804#0" expanded="true" />
+            <element signature="e#1861#1862#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/JAVA/JDK1.8/javafx-src.zip!/javafx/scene/input/KeyCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-37">
+          <caret line="104" column="36" selection-start-line="104" selection-start-column="36" selection-end-line="104" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/view/LocalGamePane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-528">
+          <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/model/GameObjectManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="65" column="5" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/view/HomePane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-215">
+          <caret line="42" column="43" selection-start-line="42" selection-start-column="43" selection-end-line="42" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/src/main/java/com/q/ServerMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="121" column="49" selection-start-line="121" selection-start-column="49" selection-end-line="121" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#722#723#0" expanded="true" />
+            <element signature="e#764#765#0" expanded="true" />
+            <element signature="e#2356#2591#1" />
+            <element signature="method#createRoom#0;class#ServerMain#0" />
+            <element signature="e#9618#9619#0" expanded="true" />
+            <element signature="e#9681#9682#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/ming/view/NetGamePane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="130" column="66" selection-start-line="130" selection-start-column="66" selection-end-line="130" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1311#1312#0" expanded="true" />
+            <element signature="e#1355#1356#0" expanded="true" />
+            <element signature="e#5421#5422#0" expanded="true" />
+            <element signature="e#5466#5467#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/src/main/java/com/q/GameConnectThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="89" column="33" selection-start-line="89" selection-start-column="33" selection-end-line="89" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4133#4134#0" expanded="true" />
+            <element signature="e#4168#4169#0" expanded="true" />
           </folding>
         </state>
       </provider>

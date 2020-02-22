@@ -16,8 +16,8 @@ import static org.ming.model.base.BaseData.*;
 public class Exploding extends GameObject {
 
     private int deadTimer = 0;
-    public byte dir = CENTER;
     {
+        this.dir = CENTER;;
         this.unitType = UnitType.EXPLODING;
     }
 
