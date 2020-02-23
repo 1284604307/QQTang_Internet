@@ -38,9 +38,16 @@ public abstract class GameObject {
         this.position= new Position(point.x*40,point.y*40);
     }
 
+    public byte getDir() {
+        return dir;
+    }
 
+    public void setDir(byte dir) {
+        this.dir = dir;
+    }
 
     public GameObject dead(){this.dead = true; return null;}
+    public boolean isDie(){return dead;}
 
     public void recycle(){this.recycled = true; }
 

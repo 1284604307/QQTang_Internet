@@ -25,8 +25,8 @@ public class Player extends GameObject implements RunBox, Serializable {
 
     private int id = 0;
 
-    private final static double centerX = 20;
-    private final static double centerY = 39;
+    private transient final static double centerX = 20;
+    private transient final static double centerY = 39;
 
     private transient KeyStack<KeyCode> keyStack = new KeyStack<>();
     private TransStatus transStatus = TransStatus.NORMAL;
@@ -35,21 +35,21 @@ public class Player extends GameObject implements RunBox, Serializable {
     private PlayerStatus playerStatus = PlayerStatus.NORMAL;
     private boolean run = false;
     //无敌时间计数
-    private int InvincibleTimer = 0;
+    private transient int InvincibleTimer = 0;
     private boolean Invincible = true;
 
-    private int deadTimer = 0;
-    private int trapperTimer = 0;
-    private int groupId = 1;
+    private transient int deadTimer = 0;
+    private transient int trapperTimer = 0;
+    private transient int groupId = 1;
 
     private transient int drawTimer = 0;
     private int kill = 0;
     private int help = 0;
 
-    private int power = 1;
-    private int speed = 3;
-    private int bubbles = 2;
-    private int putBubbles = 0;
+    private transient int power = 1;
+    private transient int speed = 3;
+    private transient int bubbles = 2;
+    private transient int putBubbles = 0;
 
     {
         this.dir = DOWN;
@@ -142,14 +142,15 @@ public class Player extends GameObject implements RunBox, Serializable {
         return putBubbles<getBubbles()&&(playerStatus==PlayerStatus.NORMAL);
     }
 
-    public void attck(World world) {
+    public Bubble attck(World world) {
         if (canAttack()) {
             if (!world.hasBubble(point.y,point.x)) {
                 putBubbles++;
-                world.putBubble(point.y,point.x,
+                return world.putBubble(point.y,point.x,
                         new Bubble(this));
             }
         }
+        return null;
     }
 
     private byte aliver(int groupId){
@@ -187,7 +188,7 @@ public class Player extends GameObject implements RunBox, Serializable {
                 world.getMusicManager().getGoods();
             }
             if (!Invincible){
-                if (world.hasExploding(py,px)){
+                if (world.hasExploding(py,px)&&!world.getExploding(py,px).isDie()){
                     if (transStatus!=TransStatus.NORMAL){
                         transStatus = TransStatus.NORMAL;
                         updateInv();

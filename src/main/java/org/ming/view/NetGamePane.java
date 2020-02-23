@@ -1,9 +1,8 @@
 package org.ming.view;
 
 import com.google.gson.Gson;
-import com.sun.corba.se.impl.activation.ServerMain;
+import com.google.gson.reflect.TypeToken;
 import io.vertx.core.Handler;
-import io.vertx.core.Vertx;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.datagram.DatagramPacket;
 import io.vertx.core.datagram.DatagramSocket;
@@ -13,57 +12,49 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
-import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.ming.connect.enums.Common;
+import org.ming.connect.model.RecycleMark;
 import org.ming.controller.ConnectController;
 import org.ming.framework.PushAndPopPane;
-import org.ming.model.GameObjectManager;
 import org.ming.model.World;
+import org.ming.model.base.Point;
+import org.ming.model.base.UnitType;
+import org.ming.model.bubble.Bubble;
+import org.ming.model.exploding.Exploding;
 import org.ming.model.players.Player;
-import org.ming.test.TcpClientVerticle;
+import org.ming.model.prop.Prop;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 public class NetGamePane extends PushAndPopPane {
 
-    private static final Logger LOGGER = LogManager.getLogger(TcpClientVerticle.class);
-
+//    private static final Logger LOGGER = LogManager.getLogger(NetGamePane.class);
     private Canvas[] gameCanvas = new Canvas[]{new Canvas(600,540),new Canvas(600,540)};
-    private GraphicsContext g2D;
-
-    private final static int translateX = 8;
-    private final static int translateY = 22;
-
-    private static Image gameWindowBg;
+//    private final static int translateX = 8;
+//    private final static int translateY = 22;
     private Canvas backgroundCanvas;
     private World world = new World();
     private Player[] players;
     private Gson gson = new Gson();
-
     private String index;
-
     private DatagramSocket udp;
-
-    public NetGamePane(Stage stage) {
-        this(stage,new JsonObject());
-    }
-
     public NetGamePane(Stage stage, JsonObject jsonObject) {
         super(stage, jsonObject);
+        for (Canvas gameCanva : gameCanvas) {
+            gameCanva.setLayoutX(4);
+            gameCanva.setLayoutY(12);
+        }
         index = ConnectController.homeInfo.getIndex();
         Pane root = new AnchorPane();
         stage.setTitle("仿QQ堂");
         backgroundCanvas = new Canvas(800,600);
-
         udp = ConnectController.udp;
         udp.send(index+"*WAIT_INIT_GAME*",12345,"127.0.0.1",datagramSocketAsyncResult -> {
             System.out.println(datagramSocketAsyncResult.succeeded()?"UDP服务成功开启":"UDP服务未开启");
@@ -76,27 +67,54 @@ public class NetGamePane extends PushAndPopPane {
 
                 Buffer data = datagramPacket.data();
                 String s = data.toString();
-                System.out.println(s);
                 String[] msgs = s.split("\\*");
                 switch (Common.valueOf(msgs[0])){
-                    case INIT_GAME:
+                    case INIT_PLAYER:
                         world.setPlayers(gson.fromJson(msgs[1],Player[].class));
                         players = world.getPlayers();
+                        break;
+                    case INIT_GAME:
+                        System.out.println(s);
+                        UnitType[][] unitTypes = gson.fromJson(msgs[1], UnitType[][].class);
                         init(stage);
+                        world.getGameObjectManager().setProps(new Prop[unitTypes.length][unitTypes[0].length]);
+                        System.out.println(unitTypes.length);
+                        for (int i = 0; i < unitTypes.length; i++) {
+                            for (int i1 = 0; i1 < unitTypes[i].length; i1++) {
+                                if (unitTypes[i][i1]!=null){
+                                    Prop prop = new Prop(new Point(i1, i));
+                                    prop.setUnitType(unitTypes[i][i1]);
+                                    world.getGameObjectManager().getProps()[i][i1]=prop;
+                                }
+                            }
+                        }
                         udp.send(linkCommon(Common.INIT_GAME_SUCCESS,""),
                                 12345,"127.0.0.1",datagramSocketAsyncResult -> {
-                                    System.out.println(datagramSocketAsyncResult.succeeded()?"初始化投递":"初始化投递失败");
+//                                System.out.println(datagramSocketAsyncResult.succeeded()?"初始化投递":"初始化投递失败");
                                 }
                         );
+                        world.getMusicManager().readyGo();
                         break;
-                    case SYN_GAME:
-                        world.setGameObjectManager(
-                                gson.fromJson(msgs[1],GameObjectManager.class)
-                        );
+                    case SYN_GAME_REMOVE:
+                        System.out.println(s);
+                        ArrayList<RecycleMark> recycleMarks = gson.fromJson(msgs[1], new TypeToken<ArrayList<RecycleMark>>() {}.getType());
+                        for (RecycleMark recycleMark : recycleMarks) {
+                            world.removeNode(recycleMark);
+                        }
+                        break;
+                    case SYN_GAME_BUBBLE:
+                        world.addNode(gson.fromJson(msgs[1], Bubble.class));
+                        break;
+                    case SYN_GAME_ADD:
+                        System.out.println(s);
+                        ArrayList<RecycleMark> marks = gson.fromJson(msgs[1], new TypeToken<ArrayList<RecycleMark>>() {}.getType());
+                        for (RecycleMark recycleMark : marks) {
+                            world.addNode(new Exploding(new Point(recycleMark.getX(),recycleMark.getY()),(byte) recycleMark.getDir()));
+                        }
                         break;
                     case SYN_PLAYER:
                         world.setPlayers(
-                                gson.fromJson(msgs[1],Player[].class)
+                            gson.fromJson(msgs[1],Player[].class)
                         );
                         players = world.getPlayers();
                         break;
@@ -105,9 +123,8 @@ public class NetGamePane extends PushAndPopPane {
         });
 
         //todo 画操作栏
-        gameWindowBg = new Image("file:src/main/resources\\Images\\BackgroundImage\\GameWindow.png");
+        Image gameWindowBg = new Image("file:src/main/resources\\Images\\BackgroundImage\\GameWindow.png");
         backgroundCanvas.getGraphicsContext2D().setFont(new Font("楷体",24));
-
         backgroundCanvas.getGraphicsContext2D().drawImage(gameWindowBg,0,0);
 
         Scene scene = new Scene(root, 800, 600);
@@ -125,10 +142,9 @@ public class NetGamePane extends PushAndPopPane {
     }
 
 
-    public void init(Stage stage){
+    private void init(Stage stage){
         // todo 画面正式开始
         try {
-            System.out.println("放歌哦哦哦哦哦\n\n-----------------------");
             world.loadMap(null);
             world.getMusicManager().oBGM();
         } catch (IOException e) {
@@ -137,30 +153,25 @@ public class NetGamePane extends PushAndPopPane {
         // 锁帧线程 和 UI线程 启动
         new MainUpdate().start();
         Scene scene = stage.getScene();
-
-        scene.setOnKeyTyped(event -> {
-            if (event.getCode()==KeyCode.SPACE){
-                udp.send(linkCommon(Common.KEYDOWN,event.getCode().toString()),
-                        12345,"127.0.0.1",datagramSocketAsyncResult -> {
-                            System.out.println(datagramSocketAsyncResult.succeeded()?"点按指令发送":"点按指令发送失败");
-                        }
-                );
-            }
-        });
         scene.setOnKeyPressed(event -> {
             switch (event.getCode()){
                 case UP:
                 case DOWN:
                 case LEFT:
                 case RIGHT:
-//                case SPACE:
                     udp.send(linkCommon(Common.KEYDOWN,event.getCode().toString()),
                             12345,"127.0.0.1",datagramSocketAsyncResult -> {
-                                System.out.println(datagramSocketAsyncResult.succeeded()?"按下指令发送":"按下指令发送失败");
+//                                System.out.println(datagramSocketAsyncResult.succeeded()?"按下指令发送":"按下指令发送失败");
                             }
                     );
                     break;
-
+                case SPACE:
+                    udp.send(linkCommon(Common.KEYDOWN,event.getCode().toString()),
+                            12345,"127.0.0.1",datagramSocketAsyncResult -> {
+//                                System.out.println(datagramSocketAsyncResult.succeeded()?"点按指令发送":"点按指令发送失败");
+                            }
+                    );
+                    break;
             }
         });
         scene.setOnKeyReleased(event -> {
@@ -171,7 +182,7 @@ public class NetGamePane extends PushAndPopPane {
                 case RIGHT:
                     udp.send(linkCommon(Common.KEYUP,event.getCode().toString()),
                             12345,"127.0.0.1",datagramSocketAsyncResult -> {
-                                System.out.println(datagramSocketAsyncResult.succeeded()?"松开指令发送":"松开指令发送失败");
+//                                System.out.println(datagramSocketAsyncResult.succeeded()?"松开指令发送":"松开指令发送失败");
                             }
                     );
                     break;
@@ -192,16 +203,12 @@ public class NetGamePane extends PushAndPopPane {
         private int liver = 2;
         DecimalFormat df=new DecimalFormat("00");
 
-        MainUpdate(){
-
-        }
-
         @Override
         public void handle(long now) {
             int oldO = o;
             o = (++o)%2;
             //todo 地图
-            g2D = gameCanvas[o].getGraphicsContext2D();
+            GraphicsContext g2D = gameCanvas[o].getGraphicsContext2D();
             g2D.drawImage(new Image("file:src/main/resources\\Images\\Map\\标准.jpg"),0,0);
             if (start){
                 int row = world.getRows();

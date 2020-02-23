@@ -6,17 +6,23 @@ import io.vertx.core.datagram.DatagramSocket;
 import io.vertx.core.net.NetServer;
 import io.vertx.core.net.NetServerOptions;
 import javafx.scene.input.KeyCode;
+import org.ming.model.prop.Prop;
 
+import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class test {
     public static void main(String[] args) {
+        ArrayList<Object> objects = new ArrayList<>();
+        objects.add("sss");
+        objects.add("sss");
+        System.out.println("S"+objects);
 
-        System.out.println(KeyCode.DOWN.getName());
-        System.out.println(KeyCode.DOWN.toString());
-
-        KeyCode.valueOf("DOWN");
+//        System.out.println(KeyCode.DOWN.getName());
+//        System.out.println(KeyCode.DOWN.toString());
+//
+//        KeyCode.valueOf("DOWN");
 //        KeyCode.valueOf("Down");
 
 //        System.out.println("hahah");

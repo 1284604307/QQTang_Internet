@@ -25,7 +25,6 @@ public class HomePane extends PushAndPopPane {
     public HomePane(Stage stage, JsonObject jsonObject) {
         super(stage, jsonObject);
 
-        new Canvas();
         this.setStyle("-fx-background-color: #ffffff");
         Text number = new Text("333333");
         TextFlow textFlow = new TextFlow(new Text("房间号 : "),number);

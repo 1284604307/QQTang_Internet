@@ -1,4 +1,8 @@
 package org.ming.connect.model;
 
-public class UnitClass {
+public enum  UnitClass {
+    BUBBLE,
+    WALL,
+    PROP,
+    EXPLODING;
 }

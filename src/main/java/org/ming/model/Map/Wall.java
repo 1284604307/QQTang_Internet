@@ -1,9 +1,11 @@
 package org.ming.model.Map;
 
+import com.sun.org.apache.regexp.internal.RE;
 import org.ming.model.World;
 import org.ming.model.base.ImageUrl;
 import org.ming.model.base.Position;
 import org.ming.model.base.UnitType;
+import org.ming.model.prop.Prop;
 import org.ming.model.prop.TransProp.KngintProp;
 import org.ming.model.prop.威力嘎嘎;
 import org.ming.model.prop.糖炮多多;
@@ -18,8 +20,8 @@ import java.util.ArrayList;
 
 public class Wall extends GameObject implements BlockBox {
 
-    public int transX = 0;
-    public int transY = -10;
+    public transient int transX = 0;
+    public transient int transY = -10;
     private int exploreTime = 0;
 
     {
@@ -76,11 +78,8 @@ public class Wall extends GameObject implements BlockBox {
             g.drawImage(ImageUrl.wall_exps[exploreTime%3],this.point.x * 40,this.point.y * 40-10,42,52);
     }
 
-    @Override
-    public GameObject dead() {
+    public Prop getProp(){
         if (!dead){
-            dead=true;
-            System.out.println(this.unitType+" dead !");
             double seed = Math.random();
             if (seed >=0.9){
                 return new KngintProp(point);
@@ -94,4 +93,10 @@ public class Wall extends GameObject implements BlockBox {
         return null;
     }
 
+    @Override
+    public GameObject dead() {
+        System.out.println(this.unitType+" dead !");
+        dead=true;
+        return null;
+    }
 }

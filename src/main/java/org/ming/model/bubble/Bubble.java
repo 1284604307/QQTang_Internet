@@ -12,11 +12,11 @@ import org.ming.model.players.Player;
 import static org.ming.model.base.ImageUrl.bubble_red;
 
 public class Bubble extends GameObject implements BlockBox {
-    private int explodeTimer = 0;
-    public int power = 2;
+    private transient int explodeTimer = 0;
+    private transient int power = 2;
     private transient Player player;
-    private boolean addSugerCount = false;
-    private boolean boom = false;
+    private transient boolean addSugerCount = false;
+    private transient boolean boom = false;
 
     {
         this.unitType = UnitType.BUBBLE;
@@ -24,7 +24,7 @@ public class Bubble extends GameObject implements BlockBox {
 
 
     public Bubble() {
-        image = bubble_red;
+//        image = bubble_red;
     }
 
 
@@ -34,14 +34,14 @@ public class Bubble extends GameObject implements BlockBox {
         position = b.getPosition();
         point = b.getPoint();
         power = b.getPower();
-        image = bubble_red;
+//        image = bubble_red;
         super.setPosition(position); //设置item的position
         return this;
     }
 
     public Bubble(Player player) {
         super(player.getPoint().x, player.getPoint().y);
-        image = bubble_red;
+//        image = bubble_red;
         position = new Position(player.getPoint().x*40, player.getPoint().y*40);
         power = player.getPower();
         super.setPosition(position); //设置item的position
@@ -64,14 +64,14 @@ public class Bubble extends GameObject implements BlockBox {
 
     public Bubble(Position position) {
         this.position = position;
-        image = new Image("file:src/main/resources/Images/Bubble/糖炮红.gif");
+//        image = new Image("file:src/main/resources/Images/Bubble/糖炮红.gif");
         super.setPosition(position); //设置item的position
     }
 
     @Override
     public void draw(GraphicsContext g) {
         if(!dead) {
-            g.drawImage(image, position.x, position.y,40,40);
+            g.drawImage(bubble_red, position.x, position.y,40,40);
         }else {
             recycled = true;
         }

@@ -53,7 +53,7 @@ public class ServerMain {
         udp.handler(datagramPacket -> {
             String s = datagramPacket.data().toString();
             String[] msgs = s.split("\\*");
-            System.out.println("主线程 : "+ datagramPacket.data());
+//            System.out.println("主线程 : "+ datagramPacket.data());
             Handler<DatagramPacket> handler = udps.get(Integer.valueOf(msgs[0]));
             if (handler!=null)
                 handler.handle(datagramPacket);
@@ -92,6 +92,7 @@ public class ServerMain {
                         for (String s : room_list) {
                             Room room = new Room();
                             room.setName("  ");
+                            room.setIndex(Integer.valueOf(s));
                             room.setIndex(Integer.valueOf(s));
                             rooms.add(room);
                         }

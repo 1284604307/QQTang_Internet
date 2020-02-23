@@ -83,8 +83,6 @@ public class ConnectController extends AbstractVerticle {
         System.out.println("配置UDP");
         udp.handler(datagramPacket -> {
 
-
-
             for (Handler<DatagramPacket> udpHandler : udpHandlers) {
                 udpHandler.handle(datagramPacket);
             }

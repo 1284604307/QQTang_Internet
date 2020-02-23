@@ -16,6 +16,7 @@ public class MusicManager {
 	private final static File _helpSelf=new File("src/main/resources/Music/自救.wav");
 	private final static File _kill=new File("src/main/resources/Music/死亡.wav");
 	private final static File _win=new File("src/main/resources/Music/胜利.wav");
+	private final static File _readyGo=new File("src/main/resources/Music/开始.wav");
 //	private Media _BGM ;
 
 	private AudioClip bubbleBomb ;
@@ -24,6 +25,7 @@ public class MusicManager {
 	public AudioClip help ;
 	public AudioClip win ;
 	public AudioClip kill ;
+	public AudioClip readyGo;
 	private Media BGM ;
 
 	private MediaPlayer mediaPlayer ;
@@ -45,6 +47,7 @@ public class MusicManager {
 			win = new AudioClip(_win.toURI().toURL().toExternalForm());
 			BGM = new Media(_BGM.toURI().toURL().toExternalForm());
 			kill = new AudioClip(_kill.toURI().toURL().toExternalForm());
+			readyGo = new AudioClip(_readyGo.toURI().toURL().toExternalForm());
 //			BGM = new AudioClip(_BGM.toURI().toURL().toExternalForm());
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
@@ -91,4 +94,6 @@ public class MusicManager {
 		System.out.println("声音控制初始化");
 	}
 
+    public void readyGo() {
+    }
 }

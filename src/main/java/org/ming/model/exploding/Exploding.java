@@ -73,9 +73,9 @@ public class Exploding extends GameObject {
 
     @Override
     public void update(World world) {
-        deadTimer+=20;
+        deadTimer+=10;
 
-        if (deadTimer>200)
+        if (deadTimer>100)
             recycled = true;
     }
 

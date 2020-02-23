@@ -1,9 +1,12 @@
 package org.ming.model;
 
+import com.google.gson.Gson;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import org.ming.connect.model.RecycleMark;
+import org.ming.connect.model.UnitClass;
 import org.ming.framework.MusicManager;
 import org.ming.model.Map.IronWall;
 import org.ming.model.Map.Wall;
@@ -17,6 +20,8 @@ import org.ming.model.players.Player;
 import org.ming.model.prop.Prop;
 
 import java.io.*;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class World {
 
@@ -48,7 +53,7 @@ public class World {
         StringBuilder sb = new StringBuilder();//定义一个字符串缓存，将字符串存放缓存中
         String s = "";
         while ((s =bReader.readLine()) != null) {//逐行读取文件内容，不读取换行符和末尾的空格
-            sb.append(s + "\n");//将读取的字符串添加换行符后累加存放在缓存中
+            sb.append(s).append("\n");//将读取的字符串添加换行符后累加存放在缓存中
         }
         bReader.close();
         String str = sb.toString();
@@ -68,6 +73,9 @@ public class World {
                         Wall wall = new Wall(x, y);
                         wall.setUnitType(unitType);
                         gameObjectManager.getWalls()[y][x] = wall;
+                        Prop prop = wall.getProp();
+                        if (prop!=null)
+                            addNode(prop);
                         break;
                     case 桶:
                         IronWall ironWall = new IronWall(x, y);
@@ -97,12 +105,14 @@ public class World {
         return false;
     }
 
-    public void putBubble(int y,int x,Bubble bubble){
+    public Bubble putBubble(int y,int x,Bubble bubble){
         if (!hasBubble(y,x)) {
-            musicManager.putBubble();
+//            musicManager.putBubble();
             gameObjectManager.getBubbles()[y][x] = bubble;
             System.out.println(hasBubble(y,x));
+            return bubble;
         }
+        return null;
     }
 
     public MusicManager getMusicManager() {
@@ -152,36 +162,49 @@ public class World {
             getExploding(y, x).draw(context);
     }
 
-    public void update(int y,int x){
-        if (hasProp(y,x)){
-            getProp(y, x).update(this);
-            if (getProp(y,x).recycled()){
-                gameObjectManager.getProps()[y][x]=null;
-            }
-        }
-        if (hasWall(y,x)){
-            getWall(y, x).update(this);
-            if (getWall(y,x).recycled()){
-                GameObject dead = getWall(y, x).dead();
-                gameObjectManager.getWalls()[y][x]=null;
-                if (dead!=null)
-                addNode((Prop)dead);
-            }
-        }
+    public ArrayList<ArrayList<RecycleMark>> update(int y, int x){
+        ArrayList<ArrayList<RecycleMark>> arrayLists = new ArrayList<>();
+        ArrayList<RecycleMark> list = new ArrayList<>();
+        ArrayList<RecycleMark> addList = new ArrayList<>();
+        arrayLists.add(list);
+        arrayLists.add(addList);
         if (hasBubble(y,x)){
             Bubble bubble = getBubble(y, x);
             bubble.update(this);
             if (bubble.recycled()){
+                list.add(new RecycleMark(y,x,UnitClass.BUBBLE));
                 gameObjectManager.getBubbles()[y][x]=null;
-                openExplore(bubble);
+                addList.addAll(openExplore(bubble));
             }
         }
         if (hasExploding(y,x)){
             getExploding(y,x).update(this);
             if (getExploding(y,x).recycled()){
+                list.add(new RecycleMark(y,x,UnitClass.EXPLODING));
                 gameObjectManager.getExplodings()[y][x]=null;
             }
         }
+        if (hasWall(y,x)){
+            getWall(y, x).update(this);
+            if (getWall(y,x).recycled()){
+                list.add(new RecycleMark(y,x,UnitClass.WALL));
+                GameObject dead = getWall(y, x).dead();
+                gameObjectManager.getWalls()[y][x]=null;
+                if (dead!=null){
+                    addList.add(new RecycleMark(y,x,UnitClass.PROP));
+                    addNode((Prop)dead);
+                }
+                return arrayLists;
+            }
+        }
+        if (hasProp(y,x)){
+            getProp(y, x).update(this);
+            if (getProp(y,x).recycled()){
+                list.add(new RecycleMark(y,x, UnitClass.PROP));
+                gameObjectManager.getProps()[y][x]=null;
+            }
+        }
+        return arrayLists;
     }
 
     public void addNode(Prop gameObject){
@@ -190,7 +213,27 @@ public class World {
     }
 
     public void addNode(Bubble gameObject){
+        gameObjectManager.getBubbles()[gameObject.getPoint().y][gameObject.getPoint().x] = gameObject;
+    }
 
+    public void removeNode(RecycleMark recycleMark){
+        int x = recycleMark.getX();
+        int y = recycleMark.getY();
+        switch (recycleMark.getUnit()){
+            case PROP:
+                gameObjectManager.getProps()[y][x]=null;
+                break;
+            case WALL:
+                gameObjectManager.getWalls()[y][x]=null;
+                break;
+            case BUBBLE:
+                musicManager.bubbleBomb();
+                gameObjectManager.getBubbles()[y][x]=null;
+                break;
+            case EXPLODING:
+                gameObjectManager.getExplodings()[y][x]=null;
+                break;
+        }
     }
 
     public void addNode(Wall gameObject){
@@ -202,32 +245,31 @@ public class World {
     }
 
     public void removeNode(Prop object){
-
         gameObjectManager.getProps()[object.getPoint().y][object.getPoint().x]=null;
     }
     public void removeNode(Bubble object){
-
         gameObjectManager.getWalls()[object.getPoint().y][object.getPoint().x]=null;
     }
     public void removeNode(Wall object){
-
         gameObjectManager.getBubbles()[object.getPoint().y][object.getPoint().x]=null;
     }
     public void removeNode(Exploding object){
-
         gameObjectManager.getExplodings()[object.getPoint().y][object.getPoint().x]=null;
     }
 
-    private void openExplore(Bubble item) {
+    private ArrayList<RecycleMark> openExplore(Bubble item) {
 
-        if(item.isBoom()) return;
+        ArrayList<RecycleMark> marks = new ArrayList<>();
+        if(item.isBoom()) return marks;
+
         item.boom();
-        musicManager.bubbleBomb();
         Point point = item.getPoint();
         removeNode(item);
 
         // todo 爆炸初始化
         Exploding exploding = new Exploding(point);
+        marks.add(new RecycleMark(
+                point.y,point.x,UnitClass.EXPLODING,exploding.getDir()));
         addNode(exploding);
 
 //        serverHelper.sendAll(new DoMessage(BUBBLE_BOOM,""));
@@ -249,26 +291,32 @@ public class World {
             if (pY+ i >=13) goDown = false;
 
             if (goL){
-                goL = justJudge( pX- i, pY , i ==item.getPower()? BaseData.LEFT:BaseData.CENTER);
+                goL = justJudge( pX- i, pY , i ==item.getPower()? BaseData.LEFT:BaseData.CENTER
+                        ,marks);
             }
             if (goR){
-                goR = justJudge(pX+ i, pY , i ==item.getPower()? BaseData.RIGHT:BaseData.CENTER);
+                goR = justJudge(pX+ i, pY , i ==item.getPower()? BaseData.RIGHT:BaseData.CENTER
+                        ,marks);
             }
             if (goUp){
-                goUp = justJudge( pX, pY- i, i ==item.getPower()? BaseData.UP:BaseData.CENTER);
+                goUp = justJudge( pX, pY- i, i ==item.getPower()? BaseData.UP:BaseData.CENTER
+                        ,marks);
             }
             if (goDown){
-                goDown = justJudge(pX, pY+ i, i ==item.getPower()? BaseData.DOWN:BaseData.CENTER);
+                goDown = justJudge(pX, pY+ i, i ==item.getPower()? BaseData.DOWN:BaseData.CENTER
+                        ,marks);
             }
 
         }
+        System.out.println(new Gson().toJson(marks));
+        return marks;
     }
 
     /**
      * 判断当前延伸方向是否有节点，节点类型及其触发手段
      * @return 返回true 可继续延伸 false 不可继续
      */
-    private boolean justJudge(int x,int y,byte dir){
+    private boolean justJudge(int x,int y,byte dir,ArrayList<RecycleMark> marks){
 
         if (hasWall(y,x)){
             GameObject dead = getWall(y, x).dead();
@@ -279,7 +327,7 @@ public class World {
         }
         if (hasBubble(y,x)){
             getBubble(y,x).dead();
-            openExplore(getBubble(y,x));
+            marks.addAll(openExplore(getBubble(y,x)));
             return false;
         }
         if (hasProp(y,x)){
@@ -287,6 +335,8 @@ public class World {
         }
         Exploding exploding = new Exploding(new Point(x, y), dir);
         addNode(exploding);
+        marks.add(new RecycleMark(
+                y,x,UnitClass.EXPLODING,dir));
         return true;
     }
 
