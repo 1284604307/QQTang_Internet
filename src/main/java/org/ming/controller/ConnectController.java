@@ -18,8 +18,13 @@ import org.ming.connect.model.User;
 import org.ming.connect.model.UserStatus;
 import org.ming.framework.Navigator;
 import org.ming.model.RoomList;
+import org.ming.model.base.Point;
+import org.ming.model.base.UnitType;
+import org.ming.model.players.Player;
+import org.ming.model.prop.Prop;
 import org.ming.view.HomePane;
 
+import java.sql.Struct;
 import java.util.*;
 
 public class ConnectController extends AbstractVerticle {
@@ -43,9 +48,13 @@ public class ConnectController extends AbstractVerticle {
     }
 
     private static ArrayList<Handler<DatagramPacket>> udpHandlers = new ArrayList<>();
+    private static ArrayList<Handler<String[]>> tcpHandlers = new ArrayList<>();
 
     public static void registerUdpHandler(Handler<DatagramPacket> handler){
         udpHandlers.add(handler);
+    }
+    public static void registerTcpHandler(Handler<String[]> handler){
+        tcpHandlers.add(handler);
     }
 
     private void toOther(String other){
@@ -82,6 +91,7 @@ public class ConnectController extends AbstractVerticle {
 
         System.out.println("配置UDP");
         udp.handler(datagramPacket -> {
+//            System.out.println(datagramPacket.data());
 
             for (Handler<DatagramPacket> udpHandler : udpHandlers) {
                 udpHandler.handle(datagramPacket);
@@ -175,6 +185,10 @@ public class ConnectController extends AbstractVerticle {
 
         System.out.println("指令 "+msgs[0]);
 
+        for (Handler<String[]> tcpHandler : tcpHandlers) {
+            tcpHandler.handle(msgs);
+        }
+
         switch (Common.valueOf(msgs[0])){
             case LOGIN_SUCCESS:
                 toOther("/hall");
@@ -220,6 +234,7 @@ public class ConnectController extends AbstractVerticle {
             case GAME_STARTING:
                 toOther("/netGame");
                 break;
+
 
         }
     }

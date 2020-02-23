@@ -14,8 +14,14 @@ import org.ming.connect.model.Room;
 import org.ming.connect.model.User;
 import org.ming.connect.model.UserStatus;
 import org.ming.model.RoomList;
+import org.ming.model.World;
+import org.ming.model.base.Point;
+import org.ming.model.base.UnitType;
+import org.ming.model.players.Player;
+import org.ming.model.prop.Prop;
 import redis.clients.jedis.Jedis;
 
+import java.net.Socket;
 import java.util.*;
 
 public class ServerMain {
@@ -32,6 +38,7 @@ public class ServerMain {
     public static User getUser(String socketId){
         return users.get(socketId);
     }
+    public static HashMap<Integer,GameConnectThread> gameThreads = new HashMap<>();
 
     public static void registerUdpHandler(int index,Handler<DatagramPacket> handler){
         System.out.println("注册handler : "+index );
@@ -45,7 +52,7 @@ public class ServerMain {
         jedis = new Jedis("127.0.0.1",6379);
 
         udp = vertx.createDatagramSocket();
-        udp.listen(12345,"127.0.0.1",datagramSocketAsyncResult -> {
+        udp.listen(12345,"0.0.0.0",datagramSocketAsyncResult -> {
             if (datagramSocketAsyncResult.succeeded()) {
                 System.out.println("监听12345端口");
             }
@@ -69,6 +76,9 @@ public class ServerMain {
                 String[] res = buffer.toString().split("\\*");
                 Common common = Common.valueOf(res[0]);
                 String body = res[1];
+                System.out.println(buffer);
+                int i;
+                int index;
                 switch (common){
                     case LOGIN:
                         User user = gson.fromJson(body, User.class);
@@ -110,18 +120,69 @@ public class ServerMain {
                         }
                         break;
                     case GAME_START:
-                        int index = getUser(sId).getRoomIndex();
+                        index = getUser(sId).getRoomIndex();
                         Set<String> members = jedis.zrangeByScore("room:" + index, 0, 8);
-                        int i = 0;
+                        i = 0;
                         String[] ips = new String[members.size()];
+                        NetSocket[] socketArr = new NetSocket[members.size()];
                         for (String member : members) {
                             // todo 发送游戏开始指令，并附加地图名
-                            ips[i++] = sockets.get(member).remoteAddress().host();
-                            sockets.get(member).write(linkCommon(Common.GAME_STARTING,""));
+                            NetSocket netSocket = sockets.get(member);
+                            socketArr[i] = netSocket;
+                            ips[i++] = netSocket.remoteAddress().host();
                         }
                         System.out.println("启动游戏线程,该房间有 " + ips.length + "人");
-                        new Thread(new GameConnectThread(index,ips)).start();
-                        System.out.println("还是到这里了");
+                        GameConnectThread thread = new GameConnectThread(index, ips, socketArr);
+                        gameThreads.put(index,thread);
+                        System.out.println("游戏线程置入哈希");
+
+
+                        for (String member : members) {
+                            // todo 发送游戏开始指令，并附加地图名
+                            NetSocket netSocket = sockets.get(member);
+                            netSocket.write(linkCommon(Common.GAME_STARTING,""));
+                        }
+                        break;
+
+                    case WAIT_INIT_PLAYER:
+                        index = getUser(sId).getRoomIndex();
+                        String host = socket.remoteAddress().host();
+                        Player[] players = gameThreads.get(index).getPlayers();
+                        World world = gameThreads.get(index).getWorld();
+                        System.out.println(host + "请求同步");
+
+                        socket.write(linkCommon(
+                                Common.INIT_PLAYER,
+                                gson.toJson(players)));
+                        System.out.println("发送完毕");
+                        break;
+                    case WAIT_INIT_GAME:
+                        index = getUser(sId).getRoomIndex();
+                        world = gameThreads.get(index).getWorld();
+                        Prop[][] props = world.getGameObjectManager().getProps();
+                        UnitType[][] unitTypes = new UnitType[props.length][props[0].length];
+                        for (i = 0; i < props.length; i++) {
+                            for (int i1 = 0; i1 < props[i].length; i1++) {
+                                if (props[i][i1]!=null)
+                                    unitTypes[i][i1] = props[i][i1].getUnitType();
+                            }
+                        }
+                        socket.write(linkCommon(
+                                Common.INIT_GAME,
+                                gson.toJson(unitTypes)));
+                        System.out.println("发送完毕");
+                        break;
+                    case INIT_GAME_SUCCESS:
+                        System.out.println("人物初始完毕");
+                        GameConnectThread gameConnectThread = gameThreads.get(getUser(sId).getRoomIndex());
+                        if (gameConnectThread.ok(socket.remoteAddress().host())){
+
+                            System.out.println("游戏预备开始");
+                            //todo 游戏正式开始
+                            gameConnectThread.start();
+                            gameConnectThread.gameStart();
+                            System.out.println("游戏正式开始");
+                        }
                         break;
                 }
             });
@@ -184,6 +245,14 @@ public class ServerMain {
                 Common.ENTER_ROOM_SUCCESS,
                 gson.toJson(homeInfo)
         ));
+    }
+
+    private static void writeToIndex(String s,int roomIndex){
+
+        Map<String, String> map = jedis.hgetAll("roomStatus:" + roomIndex);
+        map.forEach((socketId, status) -> {
+            sockets.get(socketId).write(s);
+        });
     }
 
     private static boolean exitRoom(String sId){
@@ -250,5 +319,8 @@ public class ServerMain {
         return "DATA_HEAD*"+common+"*"+s+"*DATA_FOOTER";
     }
 
+    private static String udpLinkCommon(Common common, String s){
+        return common+"*"+s;
+    }
 
 }

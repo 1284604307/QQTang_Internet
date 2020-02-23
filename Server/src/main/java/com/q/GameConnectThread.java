@@ -27,87 +27,99 @@ import org.ming.test.TcpClientVerticle;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class GameConnectThread implements Runnable {
+public class GameConnectThread extends Thread {
     private World world = new World();
     private Player[] players;
     private DatagramSocket udp = ServerMain.udp;
     private Gson gson = new Gson();
     private String[] ips ;
     private int index;
+    int count = 0;
+    private NetSocket[] sockets;
+    private HashMap<String,Player> ip_play = new HashMap<>();
+    private HashMap<NetSocket,Player> socket_play = new HashMap<>();
+    private ArrayList<String> oks = new ArrayList<>();
 //    public GameConnectThread(NetSocket[] sockets) {
 //        this.sockets = sockets;
 //    }
-    public GameConnectThread(int index,String[] ips) {
+    public GameConnectThread(int index,String[] ips,NetSocket[] sockets) {
         this.ips = ips;
+        System.out.println(Arrays.toString(ips));
         this.index = index;
-    }
+        this.sockets = sockets;
 
-    @Override
-    public void run() {
-        System.out.println("游戏线程启动");
-//        ips = new String[sockets.length];
-//        for (int i = 0; i < sockets.length; i++) {
-//            ips[i] = sockets[i].remoteAddress().host();
-//        }
-        //todo 同步玩家,地图等初始信息
         players = new Player[ips.length];
         for (int i = 0; i < players.length; i++) {
             players[i] = new Player(i);
+            ip_play.put(ips[i],players[i]);
+            socket_play.put(sockets[i],players[i]);
         }
-//        players[1].setPosition(new Position(560,0));
-//        players[1].setGroupId(2);
+        if (players.length>1){
+            players[1].setPosition(new Position(480,0));
+        }
         world.setPlayers(players);
         try {
             world.loadMap(null);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("本地任务初始完毕");
-        AtomicInteger initSize = new AtomicInteger();
+    }
+
+    public Player[] getPlayers() {
+        return players;
+    }
+
+    public NetSocket[] getSockets() {
+        return sockets;
+    }
+
+    public boolean ok(String ip){
+        if (oks.contains(ip)) {
+            return false;
+        }else {
+            oks.add(ip);
+            return oks.size() == ips.length;
+        }
+    }
+
+    public synchronized void gameStart() {
+        new GameConnectThread.MainUpdate().start();
+    }
+
+    public void setSockets(NetSocket[] sockets) {
+        this.sockets = sockets;
+    }
+
+    public void setPlayers(Player[] players) {
+        this.players = players;
+    }
+
+    public World getWorld() {
+        return world;
+    }
+
+    public void setWorld(World world) {
+        this.world = world;
+    }
+
+    @Override
+    public void run() {
+        System.out.println("游戏线程启动");
+        //todo 同步玩家,地图等初始信息
         Handler<DatagramPacket> handler = datagramPacket -> {
             String data = datagramPacket.data().toString();
             String[] msgs = data.split("\\*");
-//                System.out.println(data);
+            System.out.println(data);
+            Player player = ip_play.get(datagramPacket.sender().host());
             switch (Common.valueOf(msgs[1])) {
-                case WAIT_INIT_GAME:
-                    String host = datagramPacket.sender().host();
-                    System.out.println(host + "请求同步");
-                    udp.send(linkCommon(
-                            Common.INIT_PLAYER,
-                            gson.toJson(players)
-                    ), 12344, host, datagramSocketAsyncResult -> {
-                        System.out.println(datagramSocketAsyncResult.succeeded());
-                    });
-                    Prop[][] props = world.getGameObjectManager().getProps();
-                    UnitType[][] unitTypes = new UnitType[props.length][props[0].length];
-                    for (int i = 0; i < props.length; i++) {
-                        for (int i1 = 0; i1 < props[i].length; i1++) {
-                            if (props[i][i1]!=null)
-                                unitTypes[i][i1] = props[i][i1].getUnitType();
-                        }
-                    }
-                    udp.send(linkCommon(
-                            Common.INIT_GAME,
-                            gson.toJson(unitTypes)
-                    ), 12344, host, datagramSocketAsyncResult -> {
-                        System.out.println(datagramSocketAsyncResult.succeeded());
-                    });
-                    break;
-                case INIT_GAME_SUCCESS:
-                    System.out.println("人物初始完毕");
-                    if (initSize.incrementAndGet() >= ips.length) {
-                        System.out.println("游戏预备开始");
-                        //todo 游戏正式开始
-                        new MainUpdate().start();
-                        System.out.println("游戏正式开始");
-                    }
-                    break;
                 case KEYDOWN:
                     KeyCode keyCode = KeyCode.valueOf(msgs[2]);
                     if (keyCode==KeyCode.SPACE){
-                        Bubble bubble = players[0].attck(world);
+                        Bubble bubble = player.attck(world);
                         if(bubble!=null){
                             System.out.println("发送泡泡"+gson.toJson(bubble));
                             //todo 给放泡泡的人声音提示
@@ -117,12 +129,13 @@ public class GameConnectThread implements Runnable {
                         }
                     }
                     else
-                        players[0].getKeyStack().push(keyCode);
+                        player.getKeyStack().push(keyCode);
                     break;
                 case KEYUP:
                     keyCode = KeyCode.valueOf(msgs[2]);
-                    players[0].getKeyStack().remove(keyCode);
+                    player.getKeyStack().remove(keyCode);
                     break;
+
             }
         };
 
@@ -198,6 +211,10 @@ public class GameConnectThread implements Runnable {
         return common+"*"+s;
     }
 
+    private static String tcpLinkCommon(Common common, String s){
+        return "DATA_HEAD*"+common+"*"+s+"*DATA_FOOTER";
+    }
+
     private void syn_info(String s){
         for (String ip : ips) {
             udp.send(s,
@@ -209,23 +226,51 @@ public class GameConnectThread implements Runnable {
 
         for (String ip : ips) {
             if (marks.size()>0){
-                udp.send(
-                        linkCommon(
-                                Common.SYN_GAME_ADD,
-                                gson.toJson(marks)
-                        ),
-                        12344, ip, null);
+                if(marks.size()>45){
+                    udp.send(
+                            linkCommon(
+                                    Common.SYN_GAME_ADD,
+                                    gson.toJson(marks.subList(0,40))
+                            ),
+                            12344, ip, null);
+                    udp.send(
+                            linkCommon(
+                                    Common.SYN_GAME_ADD,
+                                    gson.toJson(marks.subList(40,recycleMarks.size()))
+                            ),
+                            12344, ip, null);
+                }else
+                    udp.send(
+                            linkCommon(
+                                    Common.SYN_GAME_ADD,
+                                    gson.toJson(marks)
+                            ),
+                            12344, ip, null);
             }
-            udp.send(linkCommon(
+            udp.send(
+                linkCommon(
                     Common.SYN_PLAYER,
-                    gson.toJson(players)
-                    ),
-                    12344, ip, null);
+                    gson.toJson(players)),
+                12344, ip, null);
             if (recycleMarks.size()>0){
-                udp.send(
+                if(recycleMarks.size()>40){
+                    udp.send(
+                            linkCommon(
+                                    Common.SYN_GAME_REMOVE,
+                                    gson.toJson(recycleMarks.subList(0,40))
+                            ),
+                            12344, ip, null);
+                    udp.send(
+                            linkCommon(
+                                    Common.SYN_GAME_REMOVE,
+                                    gson.toJson(recycleMarks.subList(40,recycleMarks.size()))
+                            ),
+                            12344, ip, null);
+                }else
+                    udp.send(
                         linkCommon(
-                                Common.SYN_GAME_REMOVE,
-                                gson.toJson(recycleMarks)
+                            Common.SYN_GAME_REMOVE,
+                            gson.toJson(recycleMarks)
                         ),
                         12344, ip, null);
             }

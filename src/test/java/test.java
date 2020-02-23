@@ -14,10 +14,10 @@ import java.util.TimerTask;
 
 public class test {
     public static void main(String[] args) {
-        ArrayList<Object> objects = new ArrayList<>();
-        objects.add("sss");
-        objects.add("sss");
-        System.out.println("S"+objects);
+//        ArrayList<Object> objects = new ArrayList<>();
+//        objects.add("sss");
+//        objects.add("sss");
+//        System.out.println("S"+objects);
 
 //        System.out.println(KeyCode.DOWN.getName());
 //        System.out.println(KeyCode.DOWN.toString());
@@ -36,7 +36,24 @@ public class test {
 //        },3000);
 
 //        jedis.smembers("room:" + index)
-//        Vertx vertx = Vertx.vertx();
+        Vertx vertx = Vertx.vertx();
+        DatagramSocket udp = vertx.createDatagramSocket();
+        udp.handler(datagramPacket -> {
+            System.out.println(datagramPacket.data());
+        });
+        udp.listen(12345,"0.0.0.0",datagramSocketAsyncResult -> {
+            System.out.println(datagramSocketAsyncResult.succeeded());
+        });
+        while (true){
+            udp.send("DATA_HEAD*INIT_GAME**DATA_FOOTER",12344,"192.168.101.14",datagramSocketAsyncResult -> {
+                System.out.println(datagramSocketAsyncResult.succeeded());
+            });
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
 //        NetServer netServer = vertx.createNetServer(new NetServerOptions());
 //        netServer.listen(1234,"",res -> {
 //            if (res.succeeded()) {

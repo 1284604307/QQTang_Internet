@@ -23,7 +23,7 @@ public class Player extends GameObject implements RunBox, Serializable {
     private transient final static double tranlateX = 4;
     private transient final static double translateY = 19;
 
-    private int id = 0;
+    private String id = "";
 
     private transient final static double centerX = 20;
     private transient final static double centerY = 39;

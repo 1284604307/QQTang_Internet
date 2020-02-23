@@ -32,6 +32,10 @@ import org.ming.model.prop.Prop;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
+
+import static org.ming.connect.enums.Common.INIT_GAME;
+import static org.ming.connect.enums.Common.INIT_PLAYER;
 
 public class NetGamePane extends PushAndPopPane {
 
@@ -45,6 +49,15 @@ public class NetGamePane extends PushAndPopPane {
     private Gson gson = new Gson();
     private String index;
     private DatagramSocket udp;
+
+    public World getWorld() {
+        return world;
+    }
+
+    public void setWorld(World world) {
+        this.world = world;
+    }
+
     public NetGamePane(Stage stage, JsonObject jsonObject) {
         super(stage, jsonObject);
         for (Canvas gameCanva : gameCanvas) {
@@ -55,73 +68,69 @@ public class NetGamePane extends PushAndPopPane {
         Pane root = new AnchorPane();
         stage.setTitle("仿QQ堂");
         backgroundCanvas = new Canvas(800,600);
-        udp = ConnectController.udp;
-        udp.send(index+"*WAIT_INIT_GAME*",12345,"127.0.0.1",datagramSocketAsyncResult -> {
-            System.out.println(datagramSocketAsyncResult.succeeded()?"UDP服务成功开启":"UDP服务未开启");
-        });
 
-        System.out.println("配置UDP");
-        ConnectController.registerUdpHandler(new Handler<DatagramPacket>() {
-            @Override
-            public void handle(DatagramPacket datagramPacket) {
 
-                Buffer data = datagramPacket.data();
-                String s = data.toString();
-                String[] msgs = s.split("\\*");
-                switch (Common.valueOf(msgs[0])){
-                    case INIT_PLAYER:
-                        world.setPlayers(gson.fromJson(msgs[1],Player[].class));
-                        players = world.getPlayers();
-                        break;
-                    case INIT_GAME:
-                        System.out.println(s);
-                        UnitType[][] unitTypes = gson.fromJson(msgs[1], UnitType[][].class);
-                        init(stage);
-                        world.getGameObjectManager().setProps(new Prop[unitTypes.length][unitTypes[0].length]);
-                        System.out.println(unitTypes.length);
-                        for (int i = 0; i < unitTypes.length; i++) {
-                            for (int i1 = 0; i1 < unitTypes[i].length; i1++) {
-                                if (unitTypes[i][i1]!=null){
-                                    Prop prop = new Prop(new Point(i1, i));
-                                    prop.setUnitType(unitTypes[i][i1]);
-                                    world.getGameObjectManager().getProps()[i][i1]=prop;
-                                }
+        Handler<String[]> tcpHandler = msgs -> {
+            switch (Common.valueOf(msgs[0])){
+
+                case INIT_PLAYER:
+                    world.setPlayers(gson.fromJson(msgs[1], Player[].class));
+                    players = world.getPlayers();
+                    ConnectController.write(Common.WAIT_INIT_GAME,"");
+                    break;
+                case INIT_GAME:
+                    UnitType[][] unitTypes = gson.fromJson(msgs[1], UnitType[][].class);
+                    init(stage);
+                    world.getGameObjectManager().setProps(new Prop[unitTypes.length][unitTypes[0].length]);
+                    System.out.println(unitTypes.length);
+                    for (int i = 0; i < unitTypes.length; i++) {
+                        for (int i1 = 0; i1 < unitTypes[i].length; i1++) {
+                            if (unitTypes[i][i1]!=null){
+                                Prop prop = new Prop(new Point(i1, i));
+                                prop.setUnitType(unitTypes[i][i1]);
+                                world.getGameObjectManager().getProps()[i][i1]=prop;
                             }
                         }
-                        udp.send(linkCommon(Common.INIT_GAME_SUCCESS,""),
-                                12345,"127.0.0.1",datagramSocketAsyncResult -> {
-//                                System.out.println(datagramSocketAsyncResult.succeeded()?"初始化投递":"初始化投递失败");
-                                }
-                        );
-                        world.getMusicManager().readyGo();
-                        break;
-                    case SYN_GAME_REMOVE:
-                        System.out.println(s);
-                        ArrayList<RecycleMark> recycleMarks = gson.fromJson(msgs[1], new TypeToken<ArrayList<RecycleMark>>() {}.getType());
-                        for (RecycleMark recycleMark : recycleMarks) {
-                            world.removeNode(recycleMark);
-                        }
-                        break;
-                    case SYN_GAME_BUBBLE:
-                        world.addNode(gson.fromJson(msgs[1], Bubble.class));
-                        break;
-                    case SYN_GAME_ADD:
-                        System.out.println(s);
-                        ArrayList<RecycleMark> marks = gson.fromJson(msgs[1], new TypeToken<ArrayList<RecycleMark>>() {}.getType());
-                        for (RecycleMark recycleMark : marks) {
-                            world.addNode(new Exploding(new Point(recycleMark.getX(),recycleMark.getY()),(byte) recycleMark.getDir()));
-                        }
-                        break;
-                    case SYN_PLAYER:
-                        world.setPlayers(
-                            gson.fromJson(msgs[1],Player[].class)
-                        );
-                        players = world.getPlayers();
-                        break;
-                }
+                    }
+                    ConnectController.write(Common.INIT_GAME_SUCCESS,"");
+                    world.getMusicManager().readyGo();
+                    break;
+            }
+        };
+        ConnectController.registerTcpHandler(tcpHandler);
+
+        udp = ConnectController.udp;
+        ConnectController.registerUdpHandler(datagramPacket -> {
+
+            Buffer data = datagramPacket.data();
+            String s = data.toString();
+            String[] msgs = s.split("\\*");
+            switch (Common.valueOf(msgs[0])){
+                case SYN_GAME_REMOVE:
+                    ArrayList<RecycleMark> recycleMarks = gson.fromJson(msgs[1], new TypeToken<ArrayList<RecycleMark>>() {}.getType());
+                    for (RecycleMark recycleMark : recycleMarks) {
+                        world.removeNode(recycleMark);
+                    }
+                    break;
+                case SYN_GAME_BUBBLE:
+                    world.addNode(gson.fromJson(msgs[1], Bubble.class));
+                    break;
+                case SYN_GAME_ADD:
+                    ArrayList<RecycleMark> marks = gson.fromJson(msgs[1], new TypeToken<ArrayList<RecycleMark>>() {}.getType());
+                    for (RecycleMark recycleMark : marks) {
+                        world.addNode(new Exploding(new Point(recycleMark.getX(),recycleMark.getY()),(byte) recycleMark.getDir()));
+                    }
+                    break;
+                case SYN_PLAYER:
+                    world.setPlayers(
+                        gson.fromJson(msgs[1],Player[].class)
+                    );
+                    players = world.getPlayers();
+                    break;
             }
         });
 
+        ConnectController.write(Common.WAIT_INIT_PLAYER,"");
         //todo 画操作栏
         Image gameWindowBg = new Image("file:src/main/resources\\Images\\BackgroundImage\\GameWindow.png");
         backgroundCanvas.getGraphicsContext2D().setFont(new Font("楷体",24));
@@ -161,14 +170,14 @@ public class NetGamePane extends PushAndPopPane {
                 case RIGHT:
                     udp.send(linkCommon(Common.KEYDOWN,event.getCode().toString()),
                             12345,"127.0.0.1",datagramSocketAsyncResult -> {
-//                                System.out.println(datagramSocketAsyncResult.succeeded()?"按下指令发送":"按下指令发送失败");
+                                System.out.println(datagramSocketAsyncResult.succeeded()?"按下指令发送":"按下指令发送失败");
                             }
                     );
                     break;
                 case SPACE:
                     udp.send(linkCommon(Common.KEYDOWN,event.getCode().toString()),
                             12345,"127.0.0.1",datagramSocketAsyncResult -> {
-//                                System.out.println(datagramSocketAsyncResult.succeeded()?"点按指令发送":"点按指令发送失败");
+                                System.out.println(datagramSocketAsyncResult.succeeded()?"点按指令发送":"点按指令发送失败");
                             }
                     );
                     break;
@@ -261,7 +270,7 @@ public class NetGamePane extends PushAndPopPane {
 
 
             try {
-                Thread.sleep(1000/60);
+                Thread.sleep(1000/30);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -269,8 +278,8 @@ public class NetGamePane extends PushAndPopPane {
         }
 
         private void drawTime(int time) {
-            int m = time / 60;
-            int s = time%60;
+            int m = time / 30;
+            int s = time%30;
             backgroundCanvas.getGraphicsContext2D().setFill(Color.WHITE);
             backgroundCanvas.getGraphicsContext2D().fillRect(680,32,100,38);
             backgroundCanvas.getGraphicsContext2D().setFill(Color.BLACK);
