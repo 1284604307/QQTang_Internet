@@ -170,14 +170,14 @@ public class NetGamePane extends PushAndPopPane {
                 case RIGHT:
                     udp.send(linkCommon(Common.KEYDOWN,event.getCode().toString()),
                             12345,"127.0.0.1",datagramSocketAsyncResult -> {
-                                System.out.println(datagramSocketAsyncResult.succeeded()?"按下指令发送":"按下指令发送失败");
+//                                System.out.println(datagramSocketAsyncResult.succeeded()?"按下指令发送":"按下指令发送失败");
                             }
                     );
                     break;
                 case SPACE:
                     udp.send(linkCommon(Common.KEYDOWN,event.getCode().toString()),
                             12345,"127.0.0.1",datagramSocketAsyncResult -> {
-                                System.out.println(datagramSocketAsyncResult.succeeded()?"点按指令发送":"点按指令发送失败");
+//                                System.out.println(datagramSocketAsyncResult.succeeded()?"点按指令发送":"点按指令发送失败");
                             }
                     );
                     break;
